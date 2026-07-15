@@ -1,0 +1,20 @@
+{
+  "phase": 8,
+  "totalPhases": 9,
+  "phaseName": "Build complete",
+  "currentStep": "All 9 phases done. System ready for migration.",
+  "percent": 100,
+  "phases": [
+    {"id": 0, "name": "Live dashboard + activity log", "status": "completed"},
+    {"id": 1, "name": "Scaffolding", "status": "completed"},
+    {"id": 2, "name": "8 skills", "status": "completed"},
+    {"id": 3, "name": "5 utility agents", "status": "completed"},
+    {"id": 4, "name": "5 migration agents", "status": "completed"},
+    {"id": 5, "name": "4 architect agents", "status": "completed"},
+    {"id": 6, "name": "Memory templates", "status": "completed"},
+    {"id": 7, "name": "Git-worktree workflow doc", "status": "completed"},
+    {"id": 8, "name": "Wire into CLAUDE.md", "status": "completed"}
+  ],
+  "startedAt": "2026-05-25T00:00:00Z",
+  "updatedAt": "2026-05-25T17:50:00Z"
+}

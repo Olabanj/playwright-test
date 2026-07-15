@@ -1,0 +1,2 @@
+"Contractor Tax Country",Role,"Scope Of Work","Start Date","End Date",Currency,"Payment Amount",Rate,"Frequency Of Payments","When Do You Want To Process Payments","Date For The First Payment","Notice Period (Days)","Contractor Label",Tag,"Contractor Name","Contractor Email","Signatory Email",CoR
+"EXAMPLE - United States","Software Engineer","Design and develop responsive web dashboard",2026-04-01,2026-12-31,USD,1234.00,"Per Hour","Every month","Every 1st of the month",2026-05-01,10,Contractor,Engineering,"John Smith",john.smith@gmail.com,hr@company.com,Yes

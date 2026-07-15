@@ -1,0 +1,243 @@
+name: Nightly Test Suite
+
+on:
+  schedule:
+    - cron: '0 0 * * 1-5'  # Mon–Fri at midnight UTC
+  workflow_dispatch:      # Allow manual trigger from GitHub UI
+
+env:
+  NODE_VERSION: '24'
+
+jobs:
+  # ============================================================
+  # E2E API SUITE
+  # backoffice is excluded until specs land under
+  # features/**/tests/ui/backoffice/ (none yet).
+  # ============================================================
+  e2e-api:
+    name: E2E (api)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run api suite
+        run: npx playwright test --project=api --workers=1 --retries=0
+        env:
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          FRONTOFFICE_URL: ${{ vars.FRONTOFFICE_URL }}
+          BACKOFFICE_URL: ${{ vars.BACKOFFICE_URL }}
+          TIME_TRACKING_API_URL: ${{ secrets.TIME_TRACKING_API_URL }}
+          CLIENT_EMAIL: ${{ secrets.CLIENT_EMAIL }}
+          CLIENT_PASSWORD: ${{ secrets.CLIENT_PASSWORD }}
+          WORKER_EMAIL: ${{ secrets.WORKER_EMAIL }}
+          WORKER_PASSWORD: ${{ secrets.WORKER_PASSWORD }}
+          E2E_SECRET_KEY: ${{ secrets.E2E_SECRET_KEY }}
+          ADMIN_LOGIN_KEY: ${{ secrets.ADMIN_LOGIN_KEY }}
+          VERBOSE: 'false'
+          CI: true
+
+      - name: Upload results (api)
+        uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: playwright-e2e-api-results
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14
+
+  # ============================================================
+  # E2E FRONTOFFICE SUITE
+  # QA-331: needs: e2e-api + if: always() runs this after (not alongside)
+  # the api suite, regardless of its outcome — avoids self-inflicted HTTP
+  # 429s on login from two suites' workers hitting the shared sandbox at
+  # once. This suite doesn't do getOTPFromDatabase(), so no DB/SSH tunnel
+  # is needed. Uses env.NODE_VERSION (24), same as .nvmrc.
+  # ============================================================
+  e2e-frontoffice:
+    name: E2E (frontoffice)
+    runs-on: ubuntu-latest
+    needs: e2e-api
+    if: always()
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-e2e-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            playwright-e2e-${{ runner.os }}-
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run frontoffice suite
+        run: npx playwright test --project=frontoffice --workers=1 --retries=0
+        env:
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          FRONTOFFICE_URL: ${{ vars.FRONTOFFICE_URL }}
+          BACKOFFICE_URL: ${{ vars.BACKOFFICE_URL }}
+          TIME_TRACKING_API_URL: ${{ secrets.TIME_TRACKING_API_URL }}
+          CLIENT_EMAIL: ${{ secrets.CLIENT_EMAIL }}
+          CLIENT_PASSWORD: ${{ secrets.CLIENT_PASSWORD }}
+          WORKER_EMAIL: ${{ secrets.WORKER_EMAIL }}
+          WORKER_PASSWORD: ${{ secrets.WORKER_PASSWORD }}
+          E2E_SECRET_KEY: ${{ secrets.E2E_SECRET_KEY }}
+          ADMIN_LOGIN_KEY: ${{ secrets.ADMIN_LOGIN_KEY }}
+          VERBOSE: 'false'
+          CI: true
+
+      - name: Upload results (frontoffice)
+        uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: playwright-e2e-frontoffice-results
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14
+
+  # ============================================================
+  # NOTIFY — runs after the E2E suite completes
+  # ============================================================
+  notify:
+    name: Notify Team
+    runs-on: ubuntu-latest
+    needs: [e2e-api, e2e-frontoffice]
+    if: always()
+
+    steps:
+      - name: Determine overall status
+        id: status
+        run: |
+          API_RESULT="${{ needs.e2e-api.result }}"
+          FRONTOFFICE_RESULT="${{ needs.e2e-frontoffice.result }}"
+
+          if [[ "$API_RESULT" == "success" && "$FRONTOFFICE_RESULT" == "success" ]]; then
+            echo "overall=success" >> $GITHUB_OUTPUT
+            echo "emoji=✅" >> $GITHUB_OUTPUT
+            echo "color=good" >> $GITHUB_OUTPUT
+            echo "summary=All E2E tests passed" >> $GITHUB_OUTPUT
+          else
+            echo "overall=failure" >> $GITHUB_OUTPUT
+            echo "emoji=❌" >> $GITHUB_OUTPUT
+            echo "color=danger" >> $GITHUB_OUTPUT
+            echo "summary=API: $API_RESULT | Frontoffice: $FRONTOFFICE_RESULT" >> $GITHUB_OUTPUT
+          fi
+
+      # ----------------------------------------------------------
+      # SLACK NOTIFICATION
+      # ----------------------------------------------------------
+      - name: Notify Slack
+        uses: slackapi/slack-github-action@v1.26.0
+        with:
+          payload: |
+            {
+              "attachments": [
+                {
+                  "color": "${{ steps.status.outputs.color }}",
+                  "blocks": [
+                    {
+                      "type": "header",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "${{ steps.status.outputs.emoji }} RemotePass Nightly Test Run"
+                      }
+                    },
+                    {
+                      "type": "section",
+                      "fields": [
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Status:*\n${{ steps.status.outputs.summary }}"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Branch:*\n${{ github.ref_name }}"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*E2E API:*\n${{ needs.e2e-api.result }}"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*E2E Frontoffice:*\n${{ needs.e2e-frontoffice.result }}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "actions",
+                      "elements": [
+                        {
+                          "type": "button",
+                          "text": {
+                            "type": "plain_text",
+                            "text": "View Run"
+                          },
+                          "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
+      # ----------------------------------------------------------
+      # EMAIL NOTIFICATION
+      # ----------------------------------------------------------
+      - name: Notify via Email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "${{ steps.status.outputs.emoji }} RemotePass Nightly Tests — ${{ steps.status.outputs.overall == 'success' && 'Passed' || 'Failed' }}"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: RemotePass QA <${{ secrets.MAIL_USERNAME }}>
+          html_body: |
+            <h2>${{ steps.status.outputs.emoji }} RemotePass Nightly Test Run</h2>
+            <table border="1" cellpadding="8" cellspacing="0">
+              <tr><td><b>Status</b></td><td>${{ steps.status.outputs.summary }}</td></tr>
+              <tr><td><b>Branch</b></td><td>${{ github.ref_name }}</td></tr>
+              <tr><td><b>E2E API</b></td><td>${{ needs.e2e-api.result }}</td></tr>
+              <tr><td><b>E2E Frontoffice</b></td><td>${{ needs.e2e-frontoffice.result }}</td></tr>
+              <tr><td><b>Triggered at</b></td><td>${{ github.event.repository.updated_at }}</td></tr>
+            </table>
+            <br/>
+            <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">
+              View Full Run on GitHub →
+            </a>

@@ -1,0 +1,72 @@
+{
+  "agents": {
+    "created": 14,
+    "total": 14,
+    "files": [
+      ".claude/agents/personal-engineering-orchestrator.md (opus)",
+      ".claude/agents/qa-architect-agent.md (opus)",
+      ".claude/agents/architecture-mapping-agent.md (opus)",
+      ".claude/agents/migration-reviewer-agent.md (opus)",
+      ".claude/agents/repo-intelligence-agent.md (sonnet)",
+      ".claude/agents/test-inventory-agent.md (sonnet)",
+      ".claude/agents/scenario-extraction-agent.md (sonnet)",
+      ".claude/agents/playwright-migration-agent.md (sonnet)",
+      ".claude/agents/page-object-fixture-agent.md (sonnet)",
+      ".claude/agents/stabilization-agent.md (sonnet)",
+      ".claude/agents/personal-memory-agent.md (haiku)",
+      ".claude/agents/docs-knowledge-agent.md (haiku)",
+      ".claude/agents/daily-work-assistant.md (haiku)",
+      ".claude/agents/english-explanation-agent.md (haiku)"
+    ]
+  },
+  "skills": {
+    "created": 8,
+    "total": 8,
+    "files": [
+      ".claude/skills/memory-read.md",
+      ".claude/skills/memory-update.md",
+      ".claude/skills/graphify-query.md",
+      ".claude/skills/progress-tracking.md",
+      ".claude/skills/test-run.md",
+      ".claude/skills/impact-analysis.md",
+      ".claude/skills/review-checklist.md",
+      ".claude/skills/summary-generation.md"
+    ]
+  },
+  "memoryTemplates": {
+    "created": 7,
+    "total": 7,
+    "files": [
+      "docs/_meta/memory-templates/personal-profile.md",
+      "docs/_meta/memory-templates/work-context.md",
+      "docs/_meta/memory-templates/qa-architecture-principles.md",
+      "docs/_meta/memory-templates/playwright-rules.md",
+      "docs/_meta/memory-templates/project-decisions.md",
+      "docs/_meta/memory-templates/lessons-learned.md",
+      "docs/_meta/memory-templates/active-projects.md"
+    ]
+  },
+  "migrationDocs": {
+    "created": 6,
+    "total": 6,
+    "files": [
+      "docs/test-migration/README.md",
+      "docs/test-migration/inventory.json",
+      "docs/test-migration/progress.json",
+      "docs/test-migration/progress.md",
+      "docs/test-migration/templates/* (3 files)",
+      "docs/20-engineering/git-worktree-multi-agent.md"
+    ]
+  },
+  "dashboardFiles": {
+    "created": 4,
+    "total": 4,
+    "files": [
+      "dashboard/app.py",
+      "dashboard/requirements.txt",
+      "dashboard/README.md",
+      "dashboard/state/*"
+    ]
+  },
+  "claudeMdWired": true
+}

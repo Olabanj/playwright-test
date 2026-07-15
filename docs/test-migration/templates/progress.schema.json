@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://remotepass.local/test-migration/progress.schema.json",
+  "title": "Test migration — aggregate progress",
+  "description": "Per-feature roll-up of migration progress. Written by progress-tracking skill.",
+  "type": "object",
+  "required": ["version", "summary", "features"],
+  "properties": {
+    "version": {"type": "integer", "const": 1},
+    "updatedAt": {"type": ["string", "null"], "format": "date-time"},
+    "summary": {
+      "type": "object",
+      "required": ["oldTotal", "migrated", "rewritten", "skipped", "blocked", "remaining", "percentDone"],
+      "properties": {
+        "oldTotal": {"type": "integer", "minimum": 0},
+        "migrated": {"type": "integer", "minimum": 0},
+        "rewritten": {"type": "integer", "minimum": 0},
+        "skipped": {"type": "integer", "minimum": 0},
+        "blocked": {"type": "integer", "minimum": 0},
+        "remaining": {"type": "integer", "minimum": 0},
+        "percentDone": {"type": "number", "minimum": 0, "maximum": 100}
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "oldTotal", "status"],
+        "properties": {
+          "name": {"type": "string"},
+          "oldTotal": {"type": "integer", "minimum": 0},
+          "migrated": {"type": "integer", "minimum": 0},
+          "rewritten": {"type": "integer", "minimum": 0},
+          "skipped": {"type": "integer", "minimum": 0},
+          "blocked": {"type": "integer", "minimum": 0},
+          "remaining": {"type": "integer", "minimum": 0},
+          "status": {
+            "type": "string",
+            "enum": ["pending", "in_progress", "done"]
+          },
+          "agent": {"type": ["string", "null"]},
+          "branch": {"type": ["string", "null"]},
+          "pr": {"type": ["string", "null"]},
+          "worktreePath": {"type": ["string", "null"]},
+          "updatedAt": {"type": "string", "format": "date-time"},
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  }
+}

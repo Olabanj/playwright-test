@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://remotepass.local/test-migration/inventory.schema.json",
+  "title": "Test migration — inventory",
+  "description": "Full catalogue of legacy tests with migration status. Written by progress-tracking skill.",
+  "type": "object",
+  "required": ["version", "summary", "features"],
+  "properties": {
+    "version": {"type": "integer", "const": 1},
+    "generatedAt": {"type": ["string", "null"], "format": "date-time"},
+    "summary": {
+      "type": "object",
+      "required": ["oldTotal", "byStatus"],
+      "properties": {
+        "oldTotal": {"type": "integer", "minimum": 0},
+        "byStatus": {
+          "type": "object",
+          "additionalProperties": {"type": "integer", "minimum": 0}
+        }
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "oldTotal", "tests"],
+        "properties": {
+          "name": {"type": "string"},
+          "oldTotal": {"type": "integer", "minimum": 0},
+          "tests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "filePath", "title", "feature", "priority", "status"],
+              "properties": {
+                "id": {"type": "string"},
+                "filePath": {"type": "string"},
+                "title": {"type": "string"},
+                "feature": {"type": "string"},
+                "priority": {"type": "string", "enum": ["P0", "P1", "P2"]},
+                "scenarioIntent": {"type": "string"},
+                "dependencies": {"type": "array", "items": {"type": "string"}},
+                "oldHelpersUsed": {"type": "array", "items": {"type": "string"}},
+                "testDataRequirements": {"type": "string"},
+                "migrationDecision": {
+                  "type": "string",
+                  "enum": ["migrate", "rewrite", "merge", "skip", "blocked"]
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "pending", "in_progress", "migrated", "rewritten",
+                    "merged", "skipped_obsolete", "blocked",
+                    "failed_review", "done"
+                  ]
+                },
+                "blockers": {"type": "array", "items": {"type": "string"}},
+                "notes": {"type": "string"},
+                "newPath": {"type": "string"},
+                "updatedAt": {"type": "string", "format": "date-time"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

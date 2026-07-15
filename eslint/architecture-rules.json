@@ -1,0 +1,149 @@
+{
+  "$comment": "Single documented source for the feature-first architecture rules. ESLint EXECUTES the enforceable subset (see eslint/architecture.mjs); this catalog maps each rule to its ADR, its enforcement mechanism, and its status. The architecture-oversight agent reads this file to know which rules are deterministically gated vs. which still require judgment. Update here AND in eslint/architecture.mjs together.",
+  "version": "0.1.0",
+  "layers": {
+    "core-http": "core/http/** — BaseApiClient, low-level HTTP",
+    "core": "core/** — shared base (BasePage, config, types)",
+    "client": "features/*/api-client.ts — one method per endpoint, no composition",
+    "builder": "features/*/builders/** — pure payload builders, no HTTP",
+    "seeding": "features/*/seeding.ts — stateless API composition (replaces Flow)",
+    "page": "features/*/pages/** — POM: locators + actions, never a client",
+    "feature-fixtures": "features/*/fixtures.ts — DI + factory state-fixtures",
+    "test": "features/*/tests/** — scenario + expect only",
+    "types": "features/*/types.ts",
+    "constants": "features/*/constants.ts"
+  },
+  "rules": [
+    {
+      "id": "LAYER-010",
+      "title": "Forbidden cross-layer imports (Page→client, client→client, builder→HTTP, leaf modules dependency-free)",
+      "severity": "error",
+      "status": "enforced",
+      "enforced_by": "eslint:boundaries/dependencies",
+      "source_adr": "2026-06-17-dmytro-remove-flow-facade-layers",
+      "judgment_residue": "Whether composition was placed in the RIGHT home (seeding.ts vs fixture) — agent."
+    },
+    {
+      "id": "ASSERT-003",
+      "title": "expect lives in tests/, never in Page Objects",
+      "severity": "error",
+      "status": "enforced",
+      "enforced_by": "eslint:no-restricted-syntax (pages scope)",
+      "source_checklist": "review-checklist #3"
+    },
+    {
+      "id": "LOC-005",
+      "title": "No raw Playwright locators in specs — locators live in Page Objects",
+      "severity": "error",
+      "status": "enforced",
+      "enforced_by": "eslint:no-restricted-syntax (specs scope) — bans page.getBy*/locator/frameLocator; expect(page)/page.goto allowed",
+      "notes": "Mirror of ASSERT-003. Static locator -> POM getter; dynamic/parameterised -> POM method returning Locator (e.g. errorToast(msg), emailText(email)); cross-cutting -> core/ui/BasePage. Keeps a Playwright API change to one place per locator, not every test."
+    },
+    {
+      "id": "ENV-001",
+      "title": "process.env only in core/config/env.ts (typed config)",
+      "severity": "error",
+      "status": "enforced",
+      "enforced_by": "eslint:no-restricted-syntax (global, env.ts excepted)",
+      "source_checklist": "review-checklist #5, #10"
+    },
+    {
+      "id": "WAIT-002",
+      "title": "No manual timers (setTimeout / waitForTimeout)",
+      "severity": "error",
+      "status": "enforced",
+      "enforced_by": "eslint:no-restricted-syntax (setTimeout callee.name + waitForTimeout callee.property.name)",
+      "source_checklist": "review-checklist #1"
+    },
+    {
+      "id": "TYPES-009",
+      "title": "No interface declared inside a spec; shared types live in types.ts",
+      "severity": "error",
+      "status": "enforced",
+      "enforced_by": "eslint:no-restricted-syntax (specs scope)",
+      "source_checklist": "review-checklist #9"
+    },
+    {
+      "id": "LOC-004",
+      "title": "Stable locators — no nth-child / XPath / raw CSS chains",
+      "severity": "warn",
+      "status": "enforced",
+      "enforced_by": "eslint:playwright/no-nth-methods, playwright/no-raw-locators",
+      "source_checklist": "review-checklist #2",
+      "judgment_residue": "Whether a getByRole/getByLabel choice is semantically the right anchor — agent."
+    },
+    {
+      "id": "DRY-020",
+      "title": "Cross-cutting boilerplate (logging, error handling) is extracted to core/, not copy-pasted per file",
+      "severity": "warn",
+      "status": "enforced",
+      "enforced_by": "eslint:sonarjs/no-identical-functions, sonarjs/no-duplicate-string",
+      "notes": "Replaces the old 'logVerbose at every method entry' convention, which was itself a copy-paste anti-pattern. Linter flags duplication; extraction into core/ is a one-time human/agent action."
+    },
+    {
+      "id": "STYLE-030",
+      "title": "A blank line separates the action block from the assertion block inside a test (Act/Assert readability)",
+      "severity": "error",
+      "status": "enforced",
+      "enforced_by": "eslint:jest/padding-around-expect-groups (specs only, auto-fixable)",
+      "notes": "Keys off expect() so it works on Playwright specs. Lives in the full `lint` (not lint:arch); auto-applied by `npm run lint:fix`. Make actions vs checks scannable at a glance."
+    },
+    {
+      "id": "LAYER-011",
+      "title": "Pages & builders are private to their feature; cross-feature uses only public entry points",
+      "severity": "error",
+      "status": "enforced",
+      "enforced_by": "eslint:boundaries/dependencies (captured feature negation !{{from.feature}})",
+      "source_adr": "2026-05-22-dmytro-feature-first-layout"
+    },
+    {
+      "id": "COMPOSE-006",
+      "title": "Specs take the fixture-provided test/expect, never raw @playwright/test; cross-module = mergeTests",
+      "severity": "error",
+      "status": "enforced",
+      "enforced_by": "eslint:no-restricted-imports (bans @playwright/test in specs)",
+      "source_checklist": "review-checklist #6",
+      "judgment_residue": "Whether a 2+-feature spec actually composed via mergeTests (vs. ad-hoc) — agent."
+    },
+    {
+      "id": "NOFLOW-007",
+      "title": "No Flow/Facade layer — no flows|facades dirs, no *Flow.ts / *Facade.ts files",
+      "severity": "error",
+      "status": "enforced",
+      "enforced_by": "fs-check:tools/arch-checks.mjs",
+      "source_adr": "2026-06-17-dmytro-remove-flow-facade-layers"
+    },
+    {
+      "id": "DOC-011",
+      "title": "Every feature with tests/ has a scenario doc at docs/test-migration/scenarios/<feature>.md",
+      "severity": "error",
+      "status": "enforced",
+      "enforced_by": "fs-check:tools/arch-checks.mjs",
+      "source_checklist": "review-checklist #11"
+    },
+    {
+      "id": "INDEP-004",
+      "title": "Independent tests — no ordering dependency, no shared mutable state",
+      "severity": "n/a",
+      "status": "agent-only",
+      "enforced_by": "agent (judgment)",
+      "source_checklist": "review-checklist #4",
+      "notes": "Partially heuristic; left to the oversight agent."
+    },
+    {
+      "id": "FIXT-008",
+      "title": "Fixtures preferred over beforeAll unless genuinely once-per-file",
+      "severity": "n/a",
+      "status": "agent-only",
+      "enforced_by": "agent (judgment)",
+      "source_checklist": "review-checklist #8"
+    },
+    {
+      "id": "MEANING-100",
+      "title": "Test verifies the documented user intent and is not always-green",
+      "severity": "n/a",
+      "status": "agent-only",
+      "enforced_by": "agent (judgment)"
+    }
+  ]
+}

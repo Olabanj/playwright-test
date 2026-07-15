@@ -1,0 +1,18 @@
+"Contractor Tax Country",Role,"Scope Of Work",Currency,"Notice Period (Days)","Contractor Label",Tag,"Contractor Name","Contractor Email","Signatory Email",CoR
+"United States","Software Engineer","Design and develop responsive web dashboard",USD,30,Contractor,Engineering,"Alice Johnson",baha+alice@remotepass.com,baha+admin2@remotepass.com,Yes
+"United Kingdom","Product Designer","Create UI/UX designs for mobile application",GBP,15,Contractor,Design,"Bob Williams",baha+bob@remotepass.com,baha+admin2@remotepass.com,No
+"Germany","Data Analyst","Analyze business metrics and create dashboards",EUR,30,Contractor,Analytics,"Clara Mueller",baha+clara@remotepass.com,baha+admin2@remotepass.com,Yes
+"Canada","DevOps Engineer","Manage CI/CD pipelines and cloud infrastructure",CAD,14,Contractor,Engineering,"David Chen",baha+david@remotepass.com,baha+admin2@remotepass.com,No
+"India","QA Engineer","Develop and execute automated test suites",INR,30,Contractor,Quality,"Priya Sharma",baha+priya@remotepass.com,baha+admin2@remotepass.com,Yes
+"Brazil","Marketing Specialist","Plan and execute digital marketing campaigns",BRL,20,Contractor,Marketing,"Lucas Silva",baha+lucas@remotepass.com,baha+admin2@remotepass.com,No
+"Australia","Backend Developer","Build and maintain RESTful API services",AUD,30,Contractor,Engineering,"Emma Taylor",baha+emma@remotepass.com,baha+admin2@remotepass.com,Yes
+"France","Content Writer","Write technical documentation and blog posts",EUR,15,Contractor,Content,"Jean Dupont",baha+jean@remotepass.com,baha+admin2@remotepass.com,No
+"Japan","Mobile Developer","Develop cross-platform mobile application",JPY,30,Contractor,Engineering,"Yuki Tanaka",baha+yuki@remotepass.com,baha+admin2@remotepass.com,Yes
+"Netherlands","Project Manager","Coordinate cross-functional team deliverables",EUR,30,Contractor,Management,"Sophie de Vries",baha+sophie@remotepass.com,baha+admin2@remotepass.com,No
+"Mexico","Frontend Developer","Build responsive single-page applications",MXN,15,Contractor,Engineering,"Carlos Ramirez",baha+carlos@remotepass.com,baha+admin2@remotepass.com,Yes
+"Japan","UI Designer","Design component library and design system",KRW,20,Contractor,Design,"Min-Ji Park",baha+minji@remotepass.com,baha+admin2@remotepass.com,No
+"Singapore","Cloud Architect","Design and review cloud infrastructure",SGD,30,Contractor,Engineering,"Wei Lin Tan",baha+weilin@remotepass.com,baha+admin2@remotepass.com,Yes
+"Ireland","Technical Writer","Create API documentation and developer guides",EUR,14,Contractor,Content,"Aoife Murphy",baha+aoife@remotepass.com,baha+admin2@remotepass.com,No
+"South Africa","Security Analyst","Perform security audits and vulnerability assessments",ZAR,30,Contractor,Security,"Thabo Nkosi",baha+thabo@remotepass.com,baha+admin2@remotepass.com,Yes
+"Poland","Scrum Master","Facilitate agile ceremonies and remove blockers",PLN,15,Contractor,Management,"Katarzyna Nowak",baha+katarzyna@remotepass.com,baha+admin2@remotepass.com,No
+"United Arab Emirates","Business Analyst","Gather requirements and create user stories",AED,20,Contractor,Analytics,"Omar Al-Farsi",baha+omar@remotepass.com,baha+admin2@remotepass.com,Yes

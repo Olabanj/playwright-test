@@ -1,0 +1,202 @@
+name: PR Checks
+
+on:
+  pull_request:
+
+env:
+  NODE_VERSION: '24'
+
+jobs:
+  # ============================================================
+  # JOB 1: LINT + TYPE CHECK — blocking
+  # Gates the feature-first suite at the repo root: G2 (tsc --noEmit) +
+  # the deterministic architecture gate (lint:arch). The full ESLint pass
+  # (npm run lint) is intentionally NOT a blocking gate — it carries an
+  # inherited cleanup backlog tracked separately (QA-443).
+  # ============================================================
+  lint-and-typecheck:
+    name: Lint & Type Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Lint architecture
+        run: npm run lint:arch
+
+  # ============================================================
+  # JOB 2: DETECT CHANGED SPEC FILES — shared by the two run jobs below
+  # Excludes archive/ (frozen legacy reference).
+  # ============================================================
+  detect-changed-specs:
+    name: Detect Changed Specs
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      has_api: ${{ steps.specs.outputs.has_api }}
+      api_files: ${{ steps.specs.outputs.api_files }}
+      has_frontoffice: ${{ steps.specs.outputs.has_frontoffice }}
+      frontoffice_files: ${{ steps.specs.outputs.frontoffice_files }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed spec files
+        id: specs
+        run: |
+          CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD | grep '\.spec\.ts$' | grep -v '^archive/' || true)
+          if [ -z "$CHANGED" ]; then
+            echo "No spec files changed — skipping test run."
+            echo "has_api=" >> $GITHUB_OUTPUT
+            echo "api_files=" >> $GITHUB_OUTPUT
+            echo "has_frontoffice=" >> $GITHUB_OUTPUT
+            echo "frontoffice_files=" >> $GITHUB_OUTPUT
+          else
+            echo "Changed spec files:"
+            echo "$CHANGED"
+
+            # API suite: changed specs under a feature's tests/api/
+            API_FILES=$(echo "$CHANGED" | grep '/tests/api/' | tr '\n' ' ' | xargs || true)
+            [ -n "$API_FILES" ] && echo "has_api=true" >> $GITHUB_OUTPUT || echo "has_api=" >> $GITHUB_OUTPUT
+            echo "api_files=$API_FILES" >> $GITHUB_OUTPUT
+
+            # Frontoffice suite: changed specs under a feature's tests/ui/frontoffice/
+            FRONTOFFICE_FILES=$(echo "$CHANGED" | grep '/tests/ui/frontoffice/' | tr '\n' ' ' | xargs || true)
+            [ -n "$FRONTOFFICE_FILES" ] && echo "has_frontoffice=true" >> $GITHUB_OUTPUT || echo "has_frontoffice=" >> $GITHUB_OUTPUT
+            echo "frontoffice_files=$FRONTOFFICE_FILES" >> $GITHUB_OUTPUT
+          fi
+
+  # ============================================================
+  # JOB 3: CHANGED API SPECS — report-only (non-blocking)
+  # --workers=1 --retries=0: shared sandbox login throttle.
+  # ============================================================
+  changed-specs-api:
+    name: Run Changed API Specs
+    needs: detect-changed-specs
+    if: needs.detect-changed-specs.outputs.has_api != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run changed API specs
+        run: npx playwright test --project=api --workers=1 --retries=0 ${{ needs.detect-changed-specs.outputs.api_files }}
+        env:
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          FRONTOFFICE_URL: ${{ vars.FRONTOFFICE_URL }}
+          BACKOFFICE_URL: ${{ vars.BACKOFFICE_URL }}
+          TIME_TRACKING_API_URL: ${{ secrets.TIME_TRACKING_API_URL }}
+          CLIENT_EMAIL: ${{ secrets.CLIENT_EMAIL }}
+          CLIENT_PASSWORD: ${{ secrets.CLIENT_PASSWORD }}
+          WORKER_EMAIL: ${{ secrets.WORKER_EMAIL }}
+          WORKER_PASSWORD: ${{ secrets.WORKER_PASSWORD }}
+          E2E_SECRET_KEY: ${{ secrets.E2E_SECRET_KEY }}
+          ADMIN_LOGIN_KEY: ${{ secrets.ADMIN_LOGIN_KEY }}
+          VERBOSE: 'false'
+          CI: true
+
+      - name: Upload results
+        uses: actions/upload-artifact@v6
+        if: ${{ !cancelled() }}
+        with:
+          name: pr-playwright-e2e-api-results
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+
+  # ============================================================
+  # JOB 4: CHANGED FRONTOFFICE SPECS — report-only (non-blocking)
+  # 60-minute budget: UI specs are materially slower than API (a full
+  # nightly frontoffice run takes ~32 min) — 15 min was cutting runs short.
+  # --workers=1 --retries=0: shared sandbox login throttle.
+  # ============================================================
+  changed-specs-frontoffice:
+    name: Run Changed Frontoffice Specs
+    needs: detect-changed-specs
+    if: needs.detect-changed-specs.outputs.has_frontoffice != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    continue-on-error: true
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-e2e-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            playwright-e2e-${{ runner.os }}-
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run changed frontoffice specs
+        run: npx playwright test --project=frontoffice --workers=1 --retries=0 ${{ needs.detect-changed-specs.outputs.frontoffice_files }}
+        env:
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          FRONTOFFICE_URL: ${{ vars.FRONTOFFICE_URL }}
+          BACKOFFICE_URL: ${{ vars.BACKOFFICE_URL }}
+          TIME_TRACKING_API_URL: ${{ secrets.TIME_TRACKING_API_URL }}
+          CLIENT_EMAIL: ${{ secrets.CLIENT_EMAIL }}
+          CLIENT_PASSWORD: ${{ secrets.CLIENT_PASSWORD }}
+          WORKER_EMAIL: ${{ secrets.WORKER_EMAIL }}
+          WORKER_PASSWORD: ${{ secrets.WORKER_PASSWORD }}
+          E2E_SECRET_KEY: ${{ secrets.E2E_SECRET_KEY }}
+          ADMIN_LOGIN_KEY: ${{ secrets.ADMIN_LOGIN_KEY }}
+          VERBOSE: 'false'
+          CI: true
+
+      - name: Upload results
+        uses: actions/upload-artifact@v6
+        if: ${{ !cancelled() }}
+        with:
+          name: pr-playwright-e2e-frontoffice-results
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7

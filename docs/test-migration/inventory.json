@@ -1,0 +1,3815 @@
+{
+  "features": [
+    {
+      "name": "client-registration",
+      "tests": [
+        {
+          "id": "29012d0be811",
+          "title": "Should display Sign Up page with all required elements",
+          "legacyPath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "describe": "Account Type Step - Smoke Tests > Positive Tests for the \"Account type\" sign up step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A visitor opens the sign-up page and sees all required elements: email input, three account type tiles (Company, Contractor, Employee), Google sign-up option, and Terms of Service text. Merge candidate with c0977caa9b80.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpPage-Step1.1-ChooseAccountType",
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/account-type.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "c0977caa9b80",
+          "title": "Should display all three account type options with descriptions",
+          "legacyPath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "describe": "Account Type Step - Smoke Tests > Positive Tests for the \"Account type\" sign up step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A visitor opens the sign-up page and sees all three account type tiles (Company, Contractor, Employee) each with its own label and description. Merge candidate with 29012d0be811.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpPage-Step1.1-ChooseAccountType",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/account-type.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "99d185bbd88f",
+          "title": "Should accept valid email format",
+          "legacyPath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "describe": "Account Type Step - Smoke Tests > Positive Tests for the \"Account type\" sign up step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A visitor types a well-formed email address into the email field on the sign-up page and the field retains the typed value.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpPage-Step1.1-ChooseAccountType",
+            "@fixtures/data/user-faker"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/account-type.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "5956015092fe",
+          "title": "Should display Terms of Service link",
+          "legacyPath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "describe": "Account Type Step - Smoke Tests > Positive Tests for the \"Account type\" sign up step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A visitor opens the sign-up page and the Terms of Service agreement text is visible.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpPage-Step1.1-ChooseAccountType"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/account-type.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "10b5746c2c2b",
+          "title": "Should proceed to next step successfully when company type selected, email entered and terms agreed",
+          "legacyPath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "describe": "Account Type Step - Smoke Tests > Positive Tests for the \"Account type\" sign up step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A visitor selects the Company account type, enters a valid email address, accepts the Terms of Service, clicks Next, and is taken to the email verification step.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/verify-email.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "a65c584d97c6",
+          "title": "Should show error for invalid email format",
+          "legacyPath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "describe": "Account Type Step - Smoke Tests > Negative Tests for the \"Account type\" sign up step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A visitor enters a malformed email address (e.g. missing '@'), accepts Terms, and clicks Next — an invalid email error toast appears and the user stays on step 1.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpPage-Step1.1-ChooseAccountType",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/account-type.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "ef86bb6cc1b2",
+          "title": "Should show error for empty email",
+          "legacyPath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "describe": "Account Type Step - Smoke Tests > Negative Tests for the \"Account type\" sign up step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A visitor accepts Terms and clicks Next without entering any email address — an email required error toast appears and the user stays on step 1.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpPage-Step1.1-ChooseAccountType",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/account-type.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "4344eaab5385",
+          "title": "Should show error for already registered email",
+          "legacyPath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "describe": "Account Type Step - Smoke Tests > Negative Tests for the \"Account type\" sign up step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A visitor enters an email address that already has an existing account, accepts Terms, and clicks Next — an email already registered error toast appears and the user stays on step 1.",
+          "dependencies": [
+            "EXISTING_CLIENT_EMAIL env/constant — a pre-seeded registered account; test fails if this account is deleted"
+          ],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpPage-Step1.1-ChooseAccountType",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/account-type.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "8a44d332044f",
+          "title": "Should not proceed without accepting Terms",
+          "legacyPath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "describe": "Account Type Step - Smoke Tests > Negative Tests for the \"Account type\" sign up step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A visitor enters a valid email but clicks Next without ticking the Terms of Service checkbox — a terms-not-accepted error toast appears and the user stays on step 1.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpPage-Step1.1-ChooseAccountType",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/account-type.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/AccountType-Step1.1.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "ca927d9fcbc9",
+          "title": "Should display \"Verify your email\" page with all required elements",
+          "legacyPath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "describe": "Verify Email Step - Smoke Tests > Positive Tests for the \"Verify your email\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "After submitting their email in step 1, the user sees the email verification page with all required UI elements. Merge candidate with f083c5fa7299, 0be513331f79, ba8fd40b4660.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/verify-email.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "f083c5fa7299",
+          "title": "Should display the email address used during registration",
+          "legacyPath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "describe": "Verify Email Step - Smoke Tests > Positive Tests for the \"Verify your email\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "The email verification page shows back the same email address the user entered in step 1. Merge candidate with ca927d9fcbc9.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/verify-email.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "0be513331f79",
+          "title": "Should display all 4 code input boxes with placeholder dashes",
+          "legacyPath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "describe": "Verify Email Step - Smoke Tests > Positive Tests for the \"Verify your email\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "The email verification page renders four individual input boxes with placeholder dashes for the 4-digit code. Merge candidate with ca927d9fcbc9.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/verify-email.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "ba8fd40b4660",
+          "title": "Should display \"Resend it\" and \"Sign In\" links",
+          "legacyPath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "describe": "Verify Email Step - Smoke Tests > Positive Tests for the \"Verify your email\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "The email verification page shows a Resend link and a Sign In link. Merge candidate with ca927d9fcbc9.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker"
+          ],
+          "migrationDecision": "merge",
+          "newPath": "features/client-registration/tests/ui/frontoffice/verify-email.spec.ts",
+          "status": "skipped_obsolete",
+          "filePath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "skipReason": "Consolidated into ca927d9fcbc9 (\"displays … all required elements\"), which already asserts both the Resend and Sign In locators. Dropped as a strict subset during the 2026-06-24 verify-email consolidation. Not a regression: the migrated spec passes serially (--workers=1)."
+        },
+        {
+          "id": "1ecab5b35a38",
+          "title": "Should navigate back when \"Back\" button is clicked",
+          "legacyPath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "describe": "Verify Email Step - Smoke Tests > Positive Tests for the \"Verify your email\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A user on the email verification step clicks Back and is returned to step 1 where the email input field is visible.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/verify-email.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "8ca02aa74c83",
+          "title": "Should proceed to next step with valid verification code",
+          "legacyPath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "describe": "Verify Email Step - Smoke Tests > Positive Tests for the \"Verify your email\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A user enters the correct bypass verification code on the email verification step and advances to the General Info step.",
+          "dependencies": [
+            "BYPASS_VERIFICATION_CODE constant — sandbox-only bypass; absent in production"
+          ],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/verify-email.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "114499b00385",
+          "title": "Should show error when submitting empty code",
+          "legacyPath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "describe": "Verify Email Step - Smoke Tests > Negative Tests for the \"Verify your email\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A user clicks Next on the email verification step without entering any code — an invalid code error toast appears and the user stays on the verification step.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/verify-email.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "5d98b9ce74b5",
+          "title": "Should show error for invalid verification code",
+          "legacyPath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "describe": "Verify Email Step - Smoke Tests > Negative Tests for the \"Verify your email\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A user enters a complete but wrong 4-digit verification code (e.g. '0000') and clicks Next — an invalid code error toast appears and the user stays on the verification step.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/verify-email.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "228a4c507d27",
+          "title": "Should show error for incomplete verification code",
+          "legacyPath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "describe": "Verify Email Step - Smoke Tests > Negative Tests for the \"Verify your email\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A user enters fewer than 4 digits (e.g. '12') and clicks Next — an invalid code error toast appears and the user stays on the verification step.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/verify-email.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/VerifyEmail-Step1.2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "0834f11e3bee",
+          "title": "Should display \"General info\" page with all required fields",
+          "legacyPath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "describe": "General Info Step - Smoke Tests > Positive Tests for the \"General info\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "After verifying their email, the user is on the General Info step and sees all required form fields: first name, middle name, last name, country selector, phone number, password. Merge candidate with 8567a09b3be7.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/general-info.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "8567a09b3be7",
+          "title": "Should be on step 2 \"Your Information\"",
+          "legacyPath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "describe": "General Info Step - Smoke Tests > Positive Tests for the \"General info\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "The step indicator on the General Info page confirms the user is at the 'your-information' step of the wizard. Merge candidate with 0834f11e3bee.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/general-info.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "5768f9be023e",
+          "title": "Should accept valid form data in all fields",
+          "legacyPath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "describe": "General Info Step - Smoke Tests > Positive Tests for the \"General info\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A user fills in all General Info fields with valid data and each field retains the entered value.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/general-info.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "0498f11c944a",
+          "title": "Should allow Middle name to be optional",
+          "legacyPath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "describe": "General Info Step - Smoke Tests > Positive Tests for the \"General info\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A user fills in all required General Info fields but leaves Middle Name empty, clicks Register, and advances to the Company Info step — Middle Name is optional and its absence does not block the form.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/general-info.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "b1b788b37938",
+          "title": "Should proceed to Company Info step after filling all fields and clicking Register",
+          "legacyPath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "describe": "General Info Step - Smoke Tests > Positive Tests for the \"General info\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A user completes all required General Info fields and clicks Register, advancing to the Company Info step.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/general-info.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "78cab51e012f",
+          "title": "Should show error when submitting empty form",
+          "legacyPath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "describe": "General Info Step - Smoke Tests > Negative Tests for the \"General info\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A user clicks Register on the General Info step without filling in any fields — a required fields error toast appears and the user stays on the step.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/general-info.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "42a8a04f9b16",
+          "title": "Should show error when First name is empty",
+          "legacyPath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "describe": "General Info Step - Smoke Tests > Negative Tests for the \"General info\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A user fills in all General Info fields except First Name and clicks Register — a required fields error toast appears and the user stays on the step.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/general-info.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "9881d9fc39ab",
+          "title": "Should show error when Last name is empty",
+          "legacyPath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "describe": "General Info Step - Smoke Tests > Negative Tests for the \"General info\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A user fills in all General Info fields except Last Name and clicks Register — a required fields error toast appears and the user stays on the step.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/general-info.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "5f86d7f8c737",
+          "title": "Should show error when Country is not selected",
+          "legacyPath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "describe": "General Info Step - Smoke Tests > Negative Tests for the \"General info\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A user fills in all General Info fields except Country and clicks Register — a required fields error toast appears and the user stays on the step.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/general-info.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "beb96a497e55",
+          "title": "Should show error when Phone number is empty",
+          "legacyPath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "describe": "General Info Step - Smoke Tests > Negative Tests for the \"General info\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A user fills in all General Info fields except Phone Number and clicks Register — a required fields error toast appears and the user stays on the step.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/general-info.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "439ba283948b",
+          "title": "Should show error when Password is empty",
+          "legacyPath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "describe": "General Info Step - Smoke Tests > Negative Tests for the \"General info\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A user fills in all General Info fields except Password and clicks Register — a password required error toast appears (distinct from the generic required fields message) and the user stays on the step.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/general-info.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/GeneralInfo-Step2.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "3acc5b2e786e",
+          "title": "Should navigate to Company Info step successfully",
+          "legacyPath": "tests/modules/client-registration/ui/verify/CompanyInfo-Step3.spec.ts",
+          "describe": "Company Info Step - Smoke Tests > Positive Tests for the \"Company info\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A user who has completed all prior steps (account type, email verification, general info) arrives at the Company Info step and the page is displayed.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/company-info.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/CompanyInfo-Step3.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        },
+        {
+          "id": "99a991cc7f42",
+          "title": "Should proceed to next step after filling all Company Info fields",
+          "legacyPath": "tests/modules/client-registration/ui/verify/CompanyInfo-Step3.spec.ts",
+          "describe": "Company Info Step - Smoke Tests > Positive Tests for the \"Company info\" step",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A user completes the entire registration wizard by filling all Company Info fields (legal name, company type, registration number, employee count, currency, address, country, city) and clicking Next — registration completes, the browser navigates to '/activity', and the user's first name is visible on the activity page. NOTE: creates a real account per run; teardown required.",
+          "dependencies": [
+            "Creates a real company account — no teardown in legacy; migration must add API-level cleanup"
+          ],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker",
+            "@utils/constants/client-registration.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/client-registration/tests/ui/frontoffice/company-info.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/client-registration/ui/verify/CompanyInfo-Step3.spec.ts",
+          "blockers": [],
+          "agent": "main-loop"
+        }
+      ]
+    },
+    {
+      "name": "onboarding",
+      "tests": [
+        {
+          "id": "36b4d5679a0a",
+          "title": "Intercept registration API calls @manual",
+          "legacyPath": "tests/modules/onboarding/api/scripts/intercept-registration.spec.ts",
+          "describe": "intercept-registration.spec.ts (standalone script — no describe block)",
+          "tags": [
+            "@manual"
+          ],
+          "priority": "P2",
+          "scenarioIntent": "Network-interception exploratory script that captures all API calls and auth storage during a live registration flow for API discovery purposes.",
+          "dependencies": [],
+          "helpersUsed": [
+            "@pages/features/SignUp/SignUpNavigationHelper",
+            "@fixtures/data/user-faker"
+          ],
+          "migrationDecision": "skip",
+          "status": "skipped_obsolete",
+          "skipReason": "Exploratory interception script used for API discovery; not a CI test and has no assertions.",
+          "filePath": "tests/modules/onboarding/api/scripts/intercept-registration.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "newPath": ""
+        },
+        {
+          "id": "5d2cadb20aa3",
+          "title": "Should complete onboarding and approve KYB successfully",
+          "legacyPath": "tests/modules/onboarding/ui/verify/client-full-onboarding.spec.ts",
+          "describe": "Onboarding - Full Flow with KYB Approval @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A newly registered client submits their company's KYB documentation via the Confirm Company Details form; an admin then approves KYB via API; the client reloads the activity page and the KYB card is no longer present. Scenario cluster B1.",
+          "dependencies": [
+            "@utils/database/db-connection-manager (direct DB access — BLOCKER: requires db-connection-manager or admin API replacement)",
+            "admin API credentials",
+            "OnboardingFixture.registerAndLogin"
+          ],
+          "helpersUsed": [
+            "@pages/features/Onboarding/ActivityPage",
+            "@pages/features/Onboarding/ConfirmCompanyDetailsPage",
+            "@fixtures/onboarding/onboarding.fixture",
+            "@fixtures/data/company-faker",
+            "@tests/modules/onboarding/helpers/company-database.helpers",
+            "@utils/database/db-connection-manager",
+            "@utils/constants/global.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/onboarding/tests/ui/frontoffice/kyb-approval.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/onboarding/ui/verify/client-full-onboarding.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "updatedAt": "2026-06-24T13:54:30.652752Z"
+        },
+        {
+          "id": "717b20f4dc8f",
+          "title": "Should save company profile with all required fields",
+          "legacyPath": "tests/modules/onboarding/ui/verify/company-profile.spec.ts",
+          "describe": "Onboarding - Company Profile @ui @smoke",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A newly registered client clicks the Complete Company Profile card on the activity page, fills all required fields on the Company Info settings tab, saves, and sees a success toast. Scenario cluster C1.",
+          "dependencies": [
+            "@utils/database/db-connection-manager (direct DB access — BLOCKER: requires db-connection-manager or admin API replacement)",
+            "OnboardingFixture.registerAndLogin"
+          ],
+          "helpersUsed": [
+            "@pages/features/Onboarding/ActivityPage",
+            "@pages/features/CompanySettings/CompanyInfoTabPage",
+            "@fixtures/onboarding/onboarding.fixture",
+            "@fixtures/data/company-faker",
+            "@utils/database/db-connection-manager",
+            "@utils/constants/global.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/onboarding/tests/ui/frontoffice/company-profile.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/onboarding/ui/verify/company-profile.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "updatedAt": "2026-06-24T13:54:30.652752Z"
+        },
+        {
+          "id": "43ea87fdbb6d",
+          "title": "Should submit company details and see In Progress status",
+          "legacyPath": "tests/modules/onboarding/ui/verify/confirm-company-details.spec.ts",
+          "describe": "Onboarding - Confirm Company Details @ui @smoke",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A newly registered client opens the Confirm Company Details form from the activity page, fills in company LinkedIn URL, authorized signatory fields, and uploads a registration document PDF, submits the form, and the activity page card transitions to In Progress status. Scenario cluster A1.",
+          "dependencies": [
+            "@utils/database/db-connection-manager (direct DB access — BLOCKER: requires db-connection-manager or admin API replacement)",
+            "OnboardingFixture.registerAndLogin"
+          ],
+          "helpersUsed": [
+            "@pages/features/Onboarding/ActivityPage",
+            "@pages/features/Onboarding/ConfirmCompanyDetailsPage",
+            "@fixtures/onboarding/onboarding.fixture",
+            "@fixtures/data/company-faker",
+            "@utils/database/db-connection-manager"
+          ],
+          "migrationDecision": "rewrite",
+          "newPath": "features/onboarding/tests/ui/frontoffice/confirm-company-details.spec.ts",
+          "status": "migrated",
+          "filePath": "tests/modules/onboarding/ui/verify/confirm-company-details.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "updatedAt": "2026-06-24T13:54:30.652752Z"
+        }
+      ]
+    },
+    {
+      "name": "contracts",
+      "tests": [
+        {
+          "id": "ab9f6dd341d2",
+          "title": "TC_EOR_API_000: GET /api/static/currencies returns currency list @smoke",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186)",
+          "tags": [
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "GET /api/static/currencies returns a non-empty currency list where each entry exposes id, code and symbol, so currency codes (USD/EUR) can be resolved to numeric IDs for all downstream salary-currency operations.",
+          "dependencies": [
+            "Authenticated client session (CLIENT_EMAIL/CLIENT_PASSWORD)"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T17:56:25.701660Z"
+        },
+        {
+          "id": "da01b2d2fe7e",
+          "title": "TC_EOR_API_001: GET contract — salary_currency field is present @smoke @critical",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186) > Edit Flow — Salary Currency",
+          "tags": [
+            "@smoke",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "On an unsigned (Pending company signature) EOR contract, GET details exposes a salary_currency object (id+code) that is distinct from the billing currency field, confirming salary currency is a first-class, separately-tracked field.",
+          "dependencies": [
+            "TC_EOR_API_000",
+            "env: EOR_CONTRACT_REF + EOR_CONTRACT_ID pointing at a 'Pending company signature' EOR contract; skips if unset"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T17:56:25.701660Z",
+          "notes": "Ported; self-skips at runtime without EOR_CONTRACT_REF (Pending-company-signature EOR contract). TODO(api-preconditions): seed a real EOR contract in the cleanup phase."
+        },
+        {
+          "id": "4e8e1519ba48",
+          "title": "TC_EOR_API_003: PATCH contract — client can change salary currency via edit flow @regression @critical",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186) > Edit Flow — Salary Currency",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Client PATCHes the salary currency on an unsigned EOR contract (PATCH /api/contract/fulltime/{id}) and the change persists — a subsequent GET returns the new salary_currency.id.",
+          "dependencies": [
+            "TC_EOR_API_000",
+            "env: EOR_CONTRACT_REF + EOR_CONTRACT_ID (Pending company signature); skips if unset",
+            "afterAll restores original currency (idempotent)"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T18:11:01.789677Z",
+          "notes": "Ported (Edit Flow describe); self-skips without EOR_CONTRACT_ID/REF. TODO(api-preconditions) seed EOR contract; TODO(cleanup) split stateful chain."
+        },
+        {
+          "id": "304e9500a7ac",
+          "title": "TC_EOR_API_004: Allowance currency inherits salary currency after edit @regression",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186) > Edit Flow — Salary Currency",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "After a salary-currency edit, every allowance on the contract is valid (name + positive amount) and, when the API exposes allowance.currency_id, it matches the new salary currency — i.e. allowances inherit the salary currency. Self-skips when the editable contract has no allowances.",
+          "dependencies": [
+            "TC_EOR_API_000",
+            "env: EOR_CONTRACT_REF + EOR_CONTRACT_ID; skips if unset or no allowances"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T18:11:01.789677Z",
+          "notes": "Ported (Edit Flow describe); self-skips without EOR_CONTRACT_ID/REF. TODO(api-preconditions) seed EOR contract; TODO(cleanup) split stateful chain."
+        },
+        {
+          "id": "d05495428bbf",
+          "title": "TC_EOR_API_005: Billing currency unchanged after salary currency edit @regression",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186) > Edit Flow — Salary Currency",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Editing the salary currency leaves the billing currency (contract.currency.id) untouched — proving salary and billing currencies are decoupled.",
+          "dependencies": [
+            "TC_EOR_API_000",
+            "env: EOR_CONTRACT_REF + EOR_CONTRACT_ID; skips if unset"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T18:11:01.789677Z",
+          "notes": "Ported (Edit Flow describe); self-skips without EOR_CONTRACT_ID/REF. TODO(api-preconditions) seed EOR contract; TODO(cleanup) split stateful chain."
+        },
+        {
+          "id": "db665c0e55c9",
+          "title": "TC_EOR_API_006: Other contract fields unchanged after currency edit @regression",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186) > Edit Flow — Salary Currency",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A salary-currency-only edit must not mutate unrelated fields — amount, name and start_date are identical before and after the PATCH.",
+          "dependencies": [
+            "TC_EOR_API_000",
+            "env: EOR_CONTRACT_REF + EOR_CONTRACT_ID; skips if unset"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T18:11:01.789677Z",
+          "notes": "Ported (Edit Flow describe); self-skips without EOR_CONTRACT_ID/REF. TODO(api-preconditions) seed EOR contract; TODO(cleanup) split stateful chain."
+        },
+        {
+          "id": "94d819e921be",
+          "title": "TC_EOR_API_007: Currency-only edit does NOT set webhook_dispatched @regression",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186) > Edit Flow — Salary Currency",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A salary-currency-only edit is a non-material change: the PATCH response body must not carry a webhook_dispatched property, confirming no external webhook fires for currency-only edits.",
+          "dependencies": [
+            "TC_EOR_API_000",
+            "env: EOR_CONTRACT_REF + EOR_CONTRACT_ID; skips if unset"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T18:11:01.789677Z",
+          "notes": "Ported (Edit Flow describe); self-skips without EOR_CONTRACT_ID/REF. TODO(api-preconditions) seed EOR contract; TODO(cleanup) split stateful chain."
+        },
+        {
+          "id": "36555f5bb675",
+          "title": "TC_EOR_API_008: POST /api/contract/amendment/add — currency amendment on active contract @smoke @critical",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186) > Amendment Flow — Salary Currency",
+          "tags": [
+            "@smoke",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "On an Ongoing EOR contract, the client raises a currency-change amendment (POST /api/contract/amendment/add) and the API confirms success with an 'amended successfully' message.",
+          "dependencies": [
+            "TC_EOR_API_000",
+            "Auto-discovered clean Ongoing EOR contract (has_amendment=false, can_amend=true) via findCleanOngoingEOR; skips if none found",
+            "AdminAPI admin token (ADMIN_LOGIN_KEY)"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@services/api/modules/admin/AdminAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T18:24:04.086193Z",
+          "notes": "Migrated (Amendment Flow, serial). GREEN end-to-end vs sandbox via findCleanOngoingEOR auto-discovery (create→client sign→admin sign_as_provider→Ongoing). TODO(cleanup): one-shot — mutates the discovered contract; seed fresh EOR per run later."
+        },
+        {
+          "id": "7637c4c97276",
+          "title": "TC_EOR_API_009: Amendment sets has_amendment flag on contract @regression @critical",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186) > Amendment Flow — Salary Currency",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "After raising a currency amendment, the contract's has_amendment flag flips to true, signalling a pending amendment awaiting signatures.",
+          "dependencies": [
+            "TC_EOR_API_008 (creates the amendment)",
+            "Auto-discovered Ongoing EOR contract"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@services/api/modules/admin/AdminAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T18:24:04.086193Z",
+          "notes": "Migrated (Amendment Flow, serial). GREEN end-to-end vs sandbox via findCleanOngoingEOR auto-discovery (create→client sign→admin sign_as_provider→Ongoing). TODO(cleanup): one-shot — mutates the discovered contract; seed fresh EOR per run later."
+        },
+        {
+          "id": "482ef6bfbb9a",
+          "title": "TC_EOR_API_011: Amendment response contains no salary-decrease error @regression",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186) > Amendment Flow — Salary Currency",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A currency-only amendment is not treated as a salary decrease — the amended contract carries no salary_decrease_error, confirming currency changes bypass the salary-reduction guard.",
+          "dependencies": [
+            "TC_EOR_API_008 (creates the amendment)",
+            "Auto-discovered Ongoing EOR contract"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@services/api/modules/admin/AdminAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T18:24:04.086193Z",
+          "notes": "Migrated (Amendment Flow, serial). GREEN end-to-end vs sandbox via findCleanOngoingEOR auto-discovery (create→client sign→admin sign_as_provider→Ongoing). TODO(cleanup): one-shot — mutates the discovered contract; seed fresh EOR per run later."
+        },
+        {
+          "id": "dc9542d4eb37",
+          "title": "TC_EOR_API_013: Currency-only amendment does not set webhook_dispatched @regression",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186) > Amendment Flow — Salary Currency",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A currency-only amendment is non-material: the contract record returned after the amendment must not carry webhook_dispatched, mirroring TC-007 for the amendment path.",
+          "dependencies": [
+            "TC_EOR_API_008 (creates the amendment)",
+            "Auto-discovered Ongoing EOR contract"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@services/api/modules/admin/AdminAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T18:24:04.086193Z",
+          "notes": "Migrated (Amendment Flow, serial). GREEN end-to-end vs sandbox via findCleanOngoingEOR auto-discovery (create→client sign→admin sign_as_provider→Ongoing). TODO(cleanup): one-shot — mutates the discovered contract; seed fresh EOR per run later."
+        },
+        {
+          "id": "d19e1f10aec8",
+          "title": "TC_EOR_API_016: Billing currency unchanged after amendment @regression",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186) > Amendment Flow — Salary Currency",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "A salary-currency amendment leaves the billing currency unchanged (compared against the billing currency captured in beforeAll before the amendment was raised) — the amendment-path equivalent of TC-005.",
+          "dependencies": [
+            "TC_EOR_API_008 (creates the amendment)",
+            "billing currency captured in beforeAll",
+            "Auto-discovered Ongoing EOR contract"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@services/api/modules/admin/AdminAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T18:24:04.086193Z",
+          "notes": "Migrated (Amendment Flow, serial). GREEN end-to-end vs sandbox via findCleanOngoingEOR auto-discovery (create→client sign→admin sign_as_provider→Ongoing). TODO(cleanup): one-shot — mutates the discovered contract; seed fresh EOR per run later."
+        },
+        {
+          "id": "a2e1976d7a6b",
+          "title": "TC_EOR_API_010: Client can sign contract after amendment @regression @critical",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186) > Amendment Flow — Salary Currency",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "The client signs the pending amendment via POST /api/contract/signature (signer name derived from the contract signatory); treats an already-signed contract as success. First gate of the two-party amendment completion.",
+          "dependencies": [
+            "TC_EOR_API_008 (creates the amendment)",
+            "TC_EOR_API_009 (has_amendment=true)",
+            "Auto-discovered Ongoing EOR contract; self-skips if no pending amendment"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@services/api/modules/admin/AdminAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T18:24:04.086193Z",
+          "notes": "Migrated (Amendment Flow, serial). GREEN end-to-end vs sandbox via findCleanOngoingEOR auto-discovery (create→client sign→admin sign_as_provider→Ongoing). TODO(cleanup): one-shot — mutates the discovered contract; seed fresh EOR per run later."
+        },
+        {
+          "id": "9fef1870a1e1",
+          "title": "TC_EOR_API_015: Admin sign_as_provider completes amendment — contract Ongoing @regression @critical",
+          "legacyPath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "filePath": "tests/modules/contracts/api/verify/eor-salary-currency.spec.ts",
+          "describe": "EOR Contracts API — Salary Currency (PD-13186) > Amendment Flow — Salary Currency",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Admin signs as provider (POST /api/admin/contract/fulltime/{id}/sign_as_provider) to complete the amendment; the contract returns to Ongoing and its salary_currency now equals the amendment target (id+code), with allowances still valid and inheriting the new currency. Final gate of the full edit->amend->sign->activate flow.",
+          "dependencies": [
+            "TC_EOR_API_008",
+            "TC_EOR_API_010 (client signed)",
+            "AdminAPI admin token",
+            "Auto-discovered Ongoing EOR contract"
+          ],
+          "helpersUsed": [
+            "@services/api/modules/eor/EORAPI",
+            "@services/api/modules/admin/AdminAPI",
+            "@fixtures/auth/auth.fixture",
+            "@utils/constants/global.constants",
+            "@utils/types/eor.types"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/api/eor-salary-currency.spec.ts",
+          "blockers": [],
+          "agent": "main-loop",
+          "status": "migrated",
+          "updatedAt": "2026-06-24T18:24:04.086193Z",
+          "notes": "Migrated (Amendment Flow, serial). GREEN end-to-end vs sandbox via findCleanOngoingEOR auto-discovery (create→client sign→admin sign_as_provider→Ongoing). TODO(cleanup): one-shot — mutates the discovered contract; seed fresh EOR per run later."
+        },
+        {
+          "id": "b783430306ce",
+          "title": "Should complete contractor registration and login successfully",
+          "legacyPath": "tests/modules/contracts/ui/verify/contractor-registration.spec.ts",
+          "filePath": "tests/modules/contracts/ui/verify/contractor-registration.spec.ts",
+          "describe": "Contractor Registration - Happy Path @smoke @critical",
+          "tags": [
+            "@smoke",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "A new contractor self-registers end-to-end through the UI — select account type, enter email, accept terms, verify via OTP (read from DB), fill personal info, submit — and lands authenticated on the Activity page with a personalised welcome greeting.",
+          "dependencies": [
+            "DB access for OTP (remotewise users table via SSH tunnel/db-connection-manager)",
+            "env: DEFAULT_PASSWORD (fallback Test@1234)",
+            "unique contractor data per run (faker)"
+          ],
+          "helpersUsed": [
+            "@pages/features/contracts/ContractorRegistrationPage",
+            "@pages/common/LoginPage",
+            "@fixtures/data/openapi/contractor-faker",
+            "tests/modules/contracts/helpers/otp-database.helpers (getOTPFromDatabase)"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/ui/frontoffice/contractor-registration.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "blocked",
+          "updatedAt": "2026-06-10T09:02:36.101213Z",
+          "skipReason": "TODO(api-preconditions): worker email OTP is random; the 9999 bypass is client-only (ContractorService.php does not pass email to generate_otp_code; see docs/40-domain/otp-bypass-client-vs-worker.md). No admin/API OTP read or force-verify path exists; only legacy path was a DB read (removed). Unblock once Azeddine backend fix ships, then port via /api/contractor/{signup,verify} with otp=9999, no DB."
+        },
+        {
+          "id": "99f0c23ba299",
+          "title": "Should complete type selection and CSV upload flow",
+          "legacyPath": "tests/modules/contracts/ui/verify/bulk-import/type-and-upload.spec.ts",
+          "filePath": "tests/modules/contracts/ui/verify/bulk-import/type-and-upload.spec.ts",
+          "describe": "Bulk Import - Type Selection & Upload @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "On the bulk-import wizard, worker-type and contract-type are required (each missing selection shows its specific validation error); a valid Contractors+Fixed selection proceeds to Upload, and a clean CSV uploads successfully and advances to the Review table.",
+          "dependencies": [
+            "Authenticated client session (API login injected)",
+            "fixtures/data/contract-bulk-import-test-data-clean.csv"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture (loginAndGotoBulkImport)",
+            "@pages/features/contracts/bulk-import/BulkImportPage",
+            "@pages/features/contracts/bulk-import/BulkImportReviewPage"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/ui/frontoffice/type-and-upload.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-10T09:02:36.101213Z",
+          "notes": "type-and-upload: type selection + CSV upload — GREEN serial (5.1s)"
+        },
+        {
+          "id": "54fbb2b74263",
+          "title": "Should download CSV templates with correct headers for each contract type",
+          "legacyPath": "tests/modules/contracts/ui/verify/bulk-import/type-and-upload.spec.ts",
+          "filePath": "tests/modules/contracts/ui/verify/bulk-import/type-and-upload.spec.ts",
+          "describe": "Bulk Import - Type Selection & Upload @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "For each contract type (Fixed, PAYG, Milestone) the Upload page offers a downloadable CSV template whose header row exactly matches the expected per-type column set (PAYG adds Rate; Milestone omits payment-schedule columns).",
+          "dependencies": [
+            "Authenticated client session",
+            "no CSV needed — exercises template download"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture (loginAndGotoBulkImport)",
+            "@pages/features/contracts/bulk-import/BulkImportPage"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/ui/frontoffice/type-and-upload.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-10T09:02:36.101213Z",
+          "notes": "type-and-upload template-headers — ported verbatim; TODO(flaky): Milestone downloaded template headers drifted (+3 vs hardcoded expected list)."
+        },
+        {
+          "id": "de7065c253a0",
+          "title": "Should display review table with correct data, filters, and search @smoke",
+          "legacyPath": "tests/modules/contracts/ui/verify/bulk-import/review-table.spec.ts",
+          "filePath": "tests/modules/contracts/ui/verify/bulk-import/review-table.spec.ts",
+          "describe": "Bulk Import - Review Table @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "After uploading a clean Fixed CSV, the Review table shows the CoR info alert, correct totals (17 contracts, 9 CoR, 17 rows), per-row CoR checkbox state matching the CSV, working Errors/All filters, and name search that narrows to a single matching row.",
+          "dependencies": [
+            "Authenticated client session",
+            "fixtures/data/contract-bulk-import-test-data-clean.csv (17 rows, 9 CoR)"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture (loginAndGotoBulkImport)",
+            "@pages/features/contracts/bulk-import/BulkImportPage",
+            "@pages/features/contracts/bulk-import/BulkImportReviewPage"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/ui/frontoffice/review-table.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-10T09:02:36.101213Z",
+          "notes": "review-table: display/filter/search — GREEN serial (6.0s)"
+        },
+        {
+          "id": "d6e0f67d45ab",
+          "title": "Should toggle CoR in table and sidebar with count updates",
+          "legacyPath": "tests/modules/contracts/ui/verify/bulk-import/review-table.spec.ts",
+          "filePath": "tests/modules/contracts/ui/verify/bulk-import/review-table.spec.ts",
+          "describe": "Bulk Import - Review Table @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "CoR can be toggled both from the table checkbox and the edit sidebar, and the CoR count updates consistently in both directions (9->8->9, then 8 after saving a sidebar toggle).",
+          "dependencies": [
+            "Authenticated client session",
+            "fixtures/data/contract-bulk-import-test-data-clean.csv"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture (loginAndGotoBulkImport)",
+            "@pages/features/contracts/bulk-import/BulkImportPage",
+            "@pages/features/contracts/bulk-import/BulkImportReviewPage",
+            "@pages/features/contracts/bulk-import/BulkImportEditSidebar"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/ui/frontoffice/review-table.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-10T09:02:36.101213Z",
+          "notes": "review-table toggle-CoR — ported verbatim; TODO(flaky): CoR row detaches on re-render after toggle (scrollIntoViewIfNeeded not attached)."
+        },
+        {
+          "id": "d2cca8dcb7c0",
+          "title": "Should open, edit, cancel, and delete via sidebar @smoke",
+          "legacyPath": "tests/modules/contracts/ui/verify/bulk-import/edit-sidebar.spec.ts",
+          "filePath": "tests/modules/contracts/ui/verify/bulk-import/edit-sidebar.spec.ts",
+          "describe": "Bulk Import - Edit Sidebar @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "The edit sidebar opens pre-filled with a row's data (name, email, job title, CoR), a job-title edit cancelled does not persist, and deleting a contractor decrements the total count (17->16).",
+          "dependencies": [
+            "Authenticated client session",
+            "fixtures/data/contract-bulk-import-test-data-clean.csv"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture (loginAndGotoBulkImport)",
+            "@pages/features/contracts/bulk-import/BulkImportPage",
+            "@pages/features/contracts/bulk-import/BulkImportReviewPage",
+            "@pages/features/contracts/bulk-import/BulkImportEditSidebar"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/ui/frontoffice/edit-sidebar.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-10T09:02:36.101213Z",
+          "notes": "edit-sidebar: open/edit/cancel/delete — GREEN serial (8.9s)"
+        },
+        {
+          "id": "a2110d230041",
+          "title": "Should detect errors and fix via sidebar",
+          "legacyPath": "tests/modules/contracts/ui/verify/bulk-import/edit-sidebar.spec.ts",
+          "filePath": "tests/modules/contracts/ui/verify/bulk-import/edit-sidebar.spec.ts",
+          "describe": "Bulk Import - Edit Sidebar @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Uploading a CSV with an invalid signatory email surfaces exactly 1 error row; fixing the signatory via the sidebar flips the row status to 'Ready' and clears the error count to 0.",
+          "dependencies": [
+            "Authenticated client session",
+            "fixtures/data/contract-bulk-import-test-data-with-errors.csv (1 invalid signatory)"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture (loginAndGotoBulkImport)",
+            "@pages/features/contracts/bulk-import/BulkImportPage",
+            "@pages/features/contracts/bulk-import/BulkImportReviewPage",
+            "@pages/features/contracts/bulk-import/BulkImportEditSidebar"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/ui/frontoffice/edit-sidebar.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-10T09:02:36.101213Z",
+          "notes": "edit-sidebar detect-errors — ported verbatim; TODO(flaky): with-errors CSV no longer triggers a row error (data/validation drift), filterByErrors returns all 17."
+        },
+        {
+          "id": "05bb65022c67",
+          "title": "Should complete eligibility assessment with step navigation and validation @smoke",
+          "legacyPath": "tests/modules/contracts/ui/verify/bulk-import/cor-eligibility.spec.ts",
+          "filePath": "tests/modules/contracts/ui/verify/bulk-import/cor-eligibility.spec.ts",
+          "describe": "Bulk Import - CoR Eligibility Modal @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "The CoR eligibility modal shows the intro with the CoR count (9), gates Next until each question is answered, supports Back navigation between steps, and after answering Yes across all 3 steps (contractor assessment, worker role, legal entity) shows the eligible result.",
+          "dependencies": [
+            "Authenticated client session",
+            "fixtures/data/contract-bulk-import-test-data-clean.csv (9 CoR)"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture (loginAndGotoBulkImport)",
+            "@pages/features/contracts/bulk-import/BulkImportPage",
+            "@pages/features/contracts/bulk-import/BulkImportReviewPage",
+            "@pages/features/contracts/bulk-import/BulkImportModals"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/ui/frontoffice/cor-eligibility.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-10T09:02:36.101213Z",
+          "notes": "cor-eligibility — ported verbatim; TODO(flaky): eligibility dialog does not open within 15s after Check Eligibility on sandbox."
+        },
+        {
+          "id": "694f65a51f49",
+          "title": "Should complete full bulk import flow, verify invite dialog content, and send custom invite @smoke @critical",
+          "legacyPath": "tests/modules/contracts/ui/verify/bulk-import/import-and-invite.spec.ts",
+          "filePath": "tests/modules/contracts/ui/verify/bulk-import/import-and-invite.spec.ts",
+          "describe": "Bulk Import - Import & Invite @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression",
+            "@smoke",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Full Fixed bulk-import happy path: type+upload, review with correct counts (17/9/0 errors), complete eligibility, proceed to import, verify the success dialog (17 imported), verify the invite dialog content (question, options, pre-filled message, save-message checked by default), then edit the message and invite all workers.",
+          "dependencies": [
+            "Authenticated client session",
+            "fixtures/data/contract-bulk-import-test-data-clean.csv",
+            "import processing 30-60s (test timeout 90s)"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture (loginAndGotoBulkImport)",
+            "@pages/features/contracts/bulk-import/BulkImportPage",
+            "@pages/features/contracts/bulk-import/BulkImportReviewPage",
+            "@pages/features/contracts/bulk-import/BulkImportModals"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/contracts/tests/ui/frontoffice/import-and-invite.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-10T09:02:36.101213Z",
+          "notes": "import-and-invite full flow — ported verbatim; TODO(selector): errorsCount(0) — no \"Errors·0\" button rendered at zero errors."
+        },
+        {
+          "id": "d973d98ace6c",
+          "title": "Should bulk import PAYG contracts with CoR",
+          "legacyPath": "tests/modules/contracts/ui/verify/bulk-import/import-and-invite.spec.ts",
+          "filePath": "tests/modules/contracts/ui/verify/bulk-import/import-and-invite.spec.ts",
+          "describe": "Bulk Import - Import & Invite @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "PAYG variant of the bulk-import happy path: upload PAYG CSV, verify review counts (17/9/0), complete eligibility, proceed, confirm import success (17), then dismiss the invite with 'Do it later'.",
+          "dependencies": [
+            "Authenticated client session",
+            "fixtures/data/contract-bulk-import-test-data-payg-clean.csv"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture (loginAndGotoBulkImport)",
+            "@pages/features/contracts/bulk-import/BulkImportPage",
+            "@pages/features/contracts/bulk-import/BulkImportReviewPage",
+            "@pages/features/contracts/bulk-import/BulkImportModals"
+          ],
+          "migrationDecision": "merge",
+          "mergeCandidateWith": "Should complete full bulk import flow, verify invite dialog content, and send custom invite @smoke @critical",
+          "newPath": "features/contracts/tests/ui/frontoffice/import-and-invite.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "skipped_obsolete",
+          "updatedAt": "2026-06-30T10:33:26.888292Z",
+          "notes": "MERGED into parametrized import-and-invite (PAYG arm); TODO(merge)+TODO(selector) errorsCount(0). Ported verbatim."
+        },
+        {
+          "id": "786cd0b0c068",
+          "title": "Should bulk import Milestone contracts with CoR",
+          "legacyPath": "tests/modules/contracts/ui/verify/bulk-import/import-and-invite.spec.ts",
+          "filePath": "tests/modules/contracts/ui/verify/bulk-import/import-and-invite.spec.ts",
+          "describe": "Bulk Import - Import & Invite @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Milestone variant of the bulk-import happy path: upload Milestone CSV, verify review counts (17/9/0), complete eligibility, proceed, confirm import success (17), then dismiss the invite with 'Do it later'.",
+          "dependencies": [
+            "Authenticated client session",
+            "fixtures/data/contract-bulk-import-test-data-milestone-clean.csv"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture (loginAndGotoBulkImport)",
+            "@pages/features/contracts/bulk-import/BulkImportPage",
+            "@pages/features/contracts/bulk-import/BulkImportReviewPage",
+            "@pages/features/contracts/bulk-import/BulkImportModals"
+          ],
+          "migrationDecision": "merge",
+          "mergeCandidateWith": "Should complete full bulk import flow, verify invite dialog content, and send custom invite @smoke @critical",
+          "newPath": "features/contracts/tests/ui/frontoffice/import-and-invite.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "skipped_obsolete",
+          "updatedAt": "2026-06-30T10:33:26.888292Z",
+          "notes": "MERGED into parametrized import-and-invite (Milestone arm); TODO(merge); TODO(flaky): Milestone CSV upload leaves Continue disabled >15s. Ported verbatim."
+        }
+      ]
+    },
+    {
+      "name": "expenses",
+      "tests": [
+        {
+          "id": "b297231073c4",
+          "title": "Expenses page displayed with correct structure @smoke",
+          "legacyPath": "tests/modules/expenses/ui/verify/expenses-list.spec.ts",
+          "filePath": "tests/modules/expenses/ui/verify/expenses-list.spec.ts",
+          "describe": "Expenses - List @ui @smoke",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Verify the contractor Expenses page renders its core structure: the Add Expense button and the full set of table column headers are visible.",
+          "dependencies": [
+            "worker account authenticated via API",
+            "precondition expense created in beforeAll"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture",
+            "@pages/features/expenses/ExpensesPage",
+            "@pages/features/expenses/ExpenseDetailsPanel",
+            "@fixtures/data/expense-faker",
+            "@pages/common/CommonComponents"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "tests/modules/expenses/ui/verify/expense-crud.spec.ts",
+          "newPath": "features/expenses/tests/ui/frontoffice/expenses.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "rewritten",
+          "updatedAt": "2026-06-16T16:31:39.880717Z"
+        },
+        {
+          "id": "43f48b7b7a28",
+          "title": "Existing expenses are displayed in table @smoke",
+          "legacyPath": "tests/modules/expenses/ui/verify/expenses-list.spec.ts",
+          "filePath": "tests/modules/expenses/ui/verify/expenses-list.spec.ts",
+          "describe": "Expenses - List @ui @smoke",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Verify that existing expense rows render in the table and each row exposes at least the expected number of cells (>= 6 columns of data).",
+          "dependencies": [
+            "worker account authenticated via API",
+            "at least one expense exists (precondition expense from beforeAll)"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture",
+            "@pages/features/expenses/ExpensesPage",
+            "@pages/features/expenses/ExpenseDetailsPanel",
+            "@fixtures/data/expense-faker"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "tests/modules/expenses/ui/verify/expense-crud.spec.ts",
+          "newPath": "features/expenses/tests/ui/frontoffice/expenses.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "rewritten",
+          "updatedAt": "2026-06-16T16:31:39.880717Z"
+        },
+        {
+          "id": "49b3b038b300",
+          "title": "Expense details are displayed by click on Details @smoke",
+          "legacyPath": "tests/modules/expenses/ui/verify/expenses-list.spec.ts",
+          "filePath": "tests/modules/expenses/ui/verify/expenses-list.spec.ts",
+          "describe": "Expenses - List @ui @smoke",
+          "tags": [
+            "@ui",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Verify that clicking 'Details' on an expense row opens the expense details side panel for the contractor.",
+          "dependencies": [
+            "worker account authenticated via API",
+            "precondition expense created in beforeAll (resolved by name)"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture",
+            "@pages/features/expenses/ExpensesPage",
+            "@pages/features/expenses/ExpenseDetailsPanel",
+            "@fixtures/data/expense-faker"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "tests/modules/expenses/ui/verify/expense-crud.spec.ts",
+          "newPath": "features/expenses/tests/ui/frontoffice/expenses.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "rewritten",
+          "updatedAt": "2026-06-16T16:31:39.880717Z"
+        },
+        {
+          "id": "2aa77a2513f5",
+          "title": "Create a new expense @regression",
+          "legacyPath": "tests/modules/expenses/ui/verify/expense-crud.spec.ts",
+          "filePath": "tests/modules/expenses/ui/verify/expense-crud.spec.ts",
+          "describe": "Expenses - CRUD @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Verify a contractor can create an expense end-to-end via the Add Expense modal and see it appear in the table with Pending status.",
+          "dependencies": [
+            "worker account authenticated via API",
+            "at least one contract available to select",
+            "at least one expense category available",
+            "receipt file fixtures/data/files/test-document.pdf"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture",
+            "@pages/features/expenses/ExpensesPage",
+            "@pages/features/expenses/ExpenseDetailsPanel",
+            "@pages/features/expenses/AddExpenseModal",
+            "@fixtures/data/expense-faker",
+            "@utils/constants/expenses.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "tests/modules/expenses/ui/verify/expenses-list.spec.ts",
+          "newPath": "features/expenses/tests/ui/frontoffice/expenses.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "rewritten",
+          "updatedAt": "2026-06-16T16:31:39.880717Z"
+        },
+        {
+          "id": "9e65eae74bb0",
+          "title": "Correct expense data displayed on the Details panel @regression",
+          "legacyPath": "tests/modules/expenses/ui/verify/expense-crud.spec.ts",
+          "filePath": "tests/modules/expenses/ui/verify/expense-crud.spec.ts",
+          "describe": "Expenses - CRUD @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Verify that after creating an expense, opening its Details panel shows the correct name, amount, and a 'Pending approval' status.",
+          "dependencies": [
+            "worker account authenticated via API",
+            "contract + category available",
+            "receipt file fixtures/data/files/test-document.pdf"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture",
+            "@pages/features/expenses/ExpensesPage",
+            "@pages/features/expenses/ExpenseDetailsPanel",
+            "@pages/features/expenses/AddExpenseModal",
+            "@fixtures/data/expense-faker",
+            "@utils/constants/expenses.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "tests/modules/expenses/ui/verify/expenses-list.spec.ts",
+          "newPath": "features/expenses/tests/ui/frontoffice/expenses.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "rewritten",
+          "updatedAt": "2026-06-16T16:31:39.880717Z"
+        },
+        {
+          "id": "a916cb418a83",
+          "title": "Delete a pending expense @regression",
+          "legacyPath": "tests/modules/expenses/ui/verify/expense-crud.spec.ts",
+          "filePath": "tests/modules/expenses/ui/verify/expense-crud.spec.ts",
+          "describe": "Expenses - CRUD @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Verify a contractor can delete an expense in 'Pending approval' status from the Details panel and confirm it is removed from the table.",
+          "dependencies": [
+            "worker account authenticated via API",
+            "contract + category available",
+            "receipt file fixtures/data/files/test-document.pdf"
+          ],
+          "helpersUsed": [
+            "@fixtures/ui/ui.fixture",
+            "@pages/features/expenses/ExpensesPage",
+            "@pages/features/expenses/ExpenseDetailsPanel",
+            "@pages/features/expenses/AddExpenseModal",
+            "@fixtures/data/expense-faker",
+            "@utils/constants/expenses.constants"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "tests/modules/expenses/ui/verify/expenses-list.spec.ts",
+          "newPath": "features/expenses/tests/ui/frontoffice/expenses.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "rewritten",
+          "updatedAt": "2026-06-16T16:31:39.880717Z"
+        },
+        {
+          "id": "535cc31d15e9",
+          "title": "Compare API response vs UI localStorage @manual",
+          "legacyPath": "tests/modules/expenses/ui/scripts/dump-auth-storage.spec.ts",
+          "filePath": "tests/modules/expenses/ui/scripts/dump-auth-storage.spec.ts",
+          "describe": "(no describe — top-level test)",
+          "tags": [
+            "@manual"
+          ],
+          "priority": "P2",
+          "scenarioIntent": "Debug/inspection utility that compares the AuthAPI login response body against the persist:root localStorage shape written by a UI login; used to derive the auth-injection format, not a product test.",
+          "dependencies": [
+            "WORKER_EMAIL / WORKER_PASSWORD env vars",
+            "@services/api/common/AuthAPI",
+            "@pages/common/LoginPage"
+          ],
+          "helpersUsed": [
+            "@pages/common/LoginPage",
+            "@services/api/common/AuthAPI"
+          ],
+          "migrationDecision": "skip",
+          "mergeCandidateWith": "",
+          "newPath": "features/expenses/tests/dump-auth-storage.ui.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "skipped_obsolete",
+          "updatedAt": "2026-06-10T09:02:36.101213Z"
+        }
+      ]
+    },
+    {
+      "name": "time-tracking",
+      "tests": [
+        {
+          "id": "d5614389b5a8",
+          "title": "TC_TT_DEEP_001: Pagination with 30 policies @deep @slow",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies-deep.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies-deep.spec.ts",
+          "describe": "Time Tracking API - Policies Deep Tests @deep @slow",
+          "tags": [
+            "@deep",
+            "@slow"
+          ],
+          "priority": "P2",
+          "scenarioIntent": "Creates 30 policies then validates pagination across pages 1-3 with sizes 5/10/15/25; verifies no overlap between pages.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policies-deep.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "updatedAt": "2026-06-25T00:00:00.000000Z"
+        },
+        {
+          "id": "9755820d5940",
+          "title": "TC_TT_DEEP_002: Stress test - rapid policy creation @deep @slow",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies-deep.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies-deep.spec.ts",
+          "describe": "Time Tracking API - Policies Deep Tests @deep @slow",
+          "tags": [
+            "@deep",
+            "@slow"
+          ],
+          "priority": "P2",
+          "scenarioIntent": "Concurrently creates 10 policies and asserts all succeed; verifies API handles parallel requests without errors.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policies-deep.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "updatedAt": "2026-06-25T00:00:00.000000Z"
+        },
+        {
+          "id": "48a5593a3fcc",
+          "title": "TC_TT_DEEP_003: Edge cases - boundary testing @deep @slow",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies-deep.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies-deep.spec.ts",
+          "describe": "Time Tracking API - Policies Deep Tests @deep @slow",
+          "tags": [
+            "@deep",
+            "@slow"
+          ],
+          "priority": "P2",
+          "scenarioIntent": "Tests 255-char title, special-char title, and all three timeBasis values in policy creation.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policies-deep.spec.ts",
+          "blockers": [],
+          "notes": "All 3 timeBasis (flexible/schedule_window/total_hours) created successfully. Per-basis workerType: flexible→per_hour, schedule_window→fixed_contractor, total_hours→fixed_contractor. total_hours uses days:[] (no window needed). TODO(cleanup) inline in spec — verify per-basis workerType with product team.",
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "updatedAt": "2026-06-25T00:00:00.000000Z"
+        },
+        {
+          "id": "ce8031511197",
+          "title": "TC_TT_API_000: API Health Check @smoke @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies",
+          "tags": [
+            "@smoke",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "GET /health returns 200; verifies TT API is reachable at API_BASE_URL.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policies.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "updatedAt": "2026-06-25T00:00:00.000Z"
+        },
+        {
+          "id": "b30559300db3",
+          "title": "TC_TT_API_001: Should get all policies with pagination @smoke",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies",
+          "tags": [
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "GET /policies returns 200 with pagination envelope (items, page, limit, total_items_count, total_pages_count).",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policies.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "updatedAt": "2026-06-25T00:00:00.000Z"
+        },
+        {
+          "id": "07edd9afd239",
+          "title": "TC_TT_API_002: Should get policy by valid ID @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Creates a policy then GET by ID returns 200 with id, title, days array; cleans up after.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policies.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "updatedAt": "2026-06-25T00:00:00.000Z"
+        },
+        {
+          "id": "0675d96e8912",
+          "title": "TC_TT_API_003: Should return 404 for invalid policy ID @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "GET /policies/999999 returns 404.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policies.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "updatedAt": "2026-06-25T00:00:00.000Z"
+        },
+        {
+          "id": "e128c54f7679",
+          "title": "TC_TT_API_004: Should create new policy with valid data @regression @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "POST /policies with full schedule_window payload returns 201 with id and correct title/timeBasis.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policies.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "updatedAt": "2026-06-25T00:00:00.000Z"
+        },
+        {
+          "id": "33dd11ae0d0a",
+          "title": "TC_TT_API_005: Should reject policy creation with missing required fields @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "POST /policies without required title/timeBasis returns 400 with message body.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policies.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "updatedAt": "2026-06-25T00:00:00.000Z"
+        },
+        {
+          "id": "c6368c145769",
+          "title": "TC_TT_API_006: Should get policies with filters @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "GET /policies?timeBasis=schedule_window returns 200; all returned items match the filter.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policies.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "updatedAt": "2026-06-25T00:00:00.000Z"
+        },
+        {
+          "id": "8fffcd7bb4aa",
+          "title": "TC_TT_API_007: Should check policy title availability @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Title availability endpoint returns isAvailable=true for a unique never-used title.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "TC_TT_API_007B",
+          "newPath": "features/time-tracking/tests/api/policies.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "updatedAt": "2026-06-25T00:00:00.000Z"
+        },
+        {
+          "id": "33bf8a368d18",
+          "title": "TC_TT_API_007B: Should detect existing policy title @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "After creating a policy, title availability check returns isAvailable=false for the same title.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "merge",
+          "mergeCandidateWith": "TC_TT_API_007",
+          "newPath": "features/time-tracking/tests/api/policies.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "notes": "TODO(merge): ported verbatim as separate test block; consolidate with 8fffcd7bb4aa (TC_TT_API_007) into parametrized available-vs-taken test in cleanup phase.",
+          "updatedAt": "2026-06-25T00:00:00.000Z"
+        },
+        {
+          "id": "1fddc6ee51e3",
+          "title": "TC_TT_API_009: Should update policy successfully @regression @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "PUT/PATCH existing policy updates title and isManualEntryAllowed; response carries new values.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policies.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "updatedAt": "2026-06-25T00:00:00.000Z"
+        },
+        {
+          "id": "1dfbb63d5255",
+          "title": "TC_TT_API_008: Should delete policy successfully @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "DELETE /policies/:id returns 204; subsequent GET returns 404 confirming deletion.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policies.spec.ts",
+          "blockers": [],
+          "agent": "playwright-migration-agent",
+          "status": "migrated",
+          "updatedAt": "2026-06-25T00:00:00.000Z"
+        },
+        {
+          "id": "8fe8f89acbd6",
+          "title": "TC_TT_POLICY_010: Should replace all policy workers successfully (PUT) @workers @regression @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies — Worker Assignment",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "PUT /policies/:id/workers with 2-3 Fixed contract IDs returns 200/204; verifies workers field in GET response.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "TC_TT_POLICY_011",
+          "newPath": "features/time-tracking/tests/api/policy-workers.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "5fff81954a56",
+          "title": "TC_TT_POLICY_011: Should clear all workers with empty array (PUT) @workers @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies — Worker Assignment",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "PUT /policies/:id/workers with [] after initial assignment returns 200/204; workers field is empty after.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "TC_TT_POLICY_010",
+          "newPath": "features/time-tracking/tests/api/policy-workers.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "715441803d55",
+          "title": "TC_TT_POLICY_012: Should return error for invalid policy ID (PUT) @workers @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies — Worker Assignment",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "PUT /policies/999999/workers returns 404.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "TC_TT_POLICY_016",
+          "newPath": "features/time-tracking/tests/api/policy-workers.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "ebbfe1e6ec38",
+          "title": "TC_TT_POLICY_013: Should add workers to policy (PATCH - add only) @workers @regression @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies — Worker Assignment",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "PATCH /policies/:id/workers adding 2 Fixed contract IDs returns 200/204; workers appear in GET policy response.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "TC_TT_POLICY_014",
+          "newPath": "features/time-tracking/tests/api/policy-workers.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "622fac504adc",
+          "title": "TC_TT_POLICY_014: Should remove workers from policy (PATCH - remove only) @workers @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies — Worker Assignment",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "PATCH removing 1 worker from 3 returns 200/204; worker count in GET response decreases.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "TC_TT_POLICY_013",
+          "newPath": "features/time-tracking/tests/api/policy-workers.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "61af914da9d0",
+          "title": "TC_TT_POLICY_015: Should add and remove workers in same call (PATCH - both) @workers @regression @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies — Worker Assignment",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Single PATCH call adding 2 and removing 1 from 3 yields net 4 workers; verified via GET.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policy-workers.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "rewritten",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "276f0de3d460",
+          "title": "TC_TT_POLICY_016: Should return error for invalid policy ID (PATCH) @workers @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies — Worker Assignment",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "PATCH /policies/999999/workers returns 404.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "TC_TT_POLICY_012",
+          "newPath": "features/time-tracking/tests/api/policy-workers.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "63a8612a0b2a",
+          "title": "TC_TT_POLICY_017: Should handle duplicate worker assignment (PATCH - edge case) @workers @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policies.spec.ts",
+          "describe": "Time Tracking API - Policies — Worker Assignment",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Re-adding an already-assigned worker via PATCH is either idempotent (200/204) or rejected (400/409); behavior logged.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policy-workers.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "41569a8b6657",
+          "title": "TC_TT_POLICY_CONTRACT_001: Should return policy for contract with assigned policy @smoke @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "describe": "Time Tracking API - Get Policy by Contract @regression",
+          "tags": [
+            "@smoke",
+            "@critical",
+            "@regression"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "GET /policies/contracts/:id returns 200 with correct policyId after assignment; probes for unassigned compatible contract.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policy-by-contract.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "ea8d68670569",
+          "title": "TC_TT_POLICY_CONTRACT_002: Should return 404 for contract without assigned policy @smoke",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "describe": "Time Tracking API - Get Policy by Contract @regression",
+          "tags": [
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "GET /policies/contracts/:id returns 404 for an unassigned contract.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policy-by-contract.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "3f5d0a375e29",
+          "title": "TC_TT_POLICY_CONTRACT_003: Should return 404 for non-existent contract ID @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "describe": "Time Tracking API - Get Policy by Contract @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "GET /policies/contracts/999999999 returns 404.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "TC_TT_POLICY_CONTRACT_004",
+          "newPath": "features/time-tracking/tests/api/policy-by-contract.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "49fbc1ebd850",
+          "title": "TC_TT_POLICY_CONTRACT_004: Should return 400 or 404 for negative contract ID @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "describe": "Time Tracking API - Get Policy by Contract @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "GET /policies/contracts/-123 returns 400 or 404.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "TC_TT_POLICY_CONTRACT_005",
+          "newPath": "features/time-tracking/tests/api/policy-by-contract.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "f192acbcf1a2",
+          "title": "TC_TT_POLICY_CONTRACT_005: Should return 400, 403, or 404 for zero contract ID @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "describe": "Time Tracking API - Get Policy by Contract @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "GET /policies/contracts/0 returns 400, 403, or 404.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "merge",
+          "mergeCandidateWith": "TC_TT_POLICY_CONTRACT_004",
+          "newPath": "features/time-tracking/tests/api/policy-by-contract.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "d7023f88c5b8",
+          "title": "TC_TT_POLICY_CONTRACT_006: Should return 404 for very large contract ID @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "describe": "Time Tracking API - Get Policy by Contract @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "GET /policies/contracts/Number.MAX_SAFE_INTEGER returns 404.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "merge",
+          "mergeCandidateWith": "TC_TT_POLICY_CONTRACT_003",
+          "newPath": "features/time-tracking/tests/api/policy-by-contract.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "ef7b0591d64f",
+          "title": "TC_TT_POLICY_CONTRACT_007: Should return complete policy structure with all required fields @regression @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "describe": "Time Tracking API - Get Policy by Contract @regression",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Assigned policy returned by GET /policies/contracts/:id contains all required shape fields: id, title, timeBasis, flags, days, overtime, timestamps.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policy-by-contract.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "1c1fab7f5aa2",
+          "title": "TC_TT_POLICY_CONTRACT_008: Should verify workers array includes assigned contract @smoke",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-by-contract.spec.ts",
+          "describe": "Time Tracking API - Get Policy by Contract @regression",
+          "tags": [
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "After assignment, getPolicyByContract returns the policy; full getPolicyById shows the contractId in workers array.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "TC_TT_POLICY_CONTRACT_001",
+          "newPath": "features/time-tracking/tests/api/policy-by-contract.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "ea0358b598f3",
+          "title": "MATRIX-001: PAYG + Flexible policy: assignment succeeds @smoke @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "describe": "Time Tracking - Policy-Contract Matrix @matrix @critical — PAYG Contracts — Custom Policy Assignment @payg",
+          "tags": [
+            "@smoke",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "PAYG contract assigned to flexible/per_hour policy; getPolicyByContract confirms timeBasis=flexible.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policy-contract-matrix.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "75664fdb6493",
+          "title": "MATRIX-002: PAYG + Schedule Window policy: assignment succeeds @regression @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "describe": "Time Tracking - Policy-Contract Matrix @matrix @critical — PAYG Contracts — Custom Policy Assignment @payg",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "PAYG contract assigned to schedule_window/per_hour policy; response confirms timeBasis and non-empty days.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "MATRIX-001",
+          "newPath": "features/time-tracking/tests/api/policy-contract-matrix.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "0fa75014a4c6",
+          "title": "MATRIX-003: PAYG + Total Hours Policy @regression @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "describe": "Time Tracking - Policy-Contract Matrix @matrix @critical — PAYG Contracts — Custom Policy Assignment @payg",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "PAYG contract assigned to total_hours policy; response confirms timeBasis and isEditingAllowed=false.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "MATRIX-001",
+          "newPath": "features/time-tracking/tests/api/policy-contract-matrix.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "ce6d7ef39e85",
+          "title": "MATRIX-004: PAYG + No Overtime Policy @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "describe": "Time Tracking - Policy-Contract Matrix @matrix @critical — PAYG Contracts — Custom Policy Assignment @payg",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Second PAYG contract assigned to flexible policy with no overtime; response confirms overtime field is null.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policy-contract-matrix.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "a92b08d87ab2",
+          "title": "MATRIX-005: All contract types with all policy time bases — create, assign, verify @regression @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "describe": "Time Tracking - Policy-Contract Matrix @matrix @critical — Non-PAYG Contract/Policy Combinations @matrix",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Skipped: EOR contract minting (~2-3 min each) blows per-test timeout; re-enable after EOR is pre-provisioned in pool seeder.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "blocked",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policy-contract-matrix.spec.ts",
+          "blockers": [
+            "Skipped: EOR contract minting (~2-3 min each) blows per-test timeout; re-enable after EOR is pre-provisioned in pool seeder."
+          ],
+          "agent": null,
+          "status": "blocked",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "07633f866c96",
+          "title": "MATRIX-017: Multiple PAYG contracts on one per_hour policy @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "describe": "Time Tracking - Policy-Contract Matrix @matrix @critical — Multi-Contract Policy Assignments @multi",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Two PAYG contracts assigned to the same policy each resolve to that policy via getPolicyByContract.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policy-contract-matrix.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "3a31f1b01402",
+          "title": "MATRIX-018: Reassign contract from one policy to another @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/policy-contract-matrix.spec.ts",
+          "describe": "Time Tracking - Policy-Contract Matrix @matrix @critical — Multi-Contract Policy Assignments @multi",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Removing a Fixed contract from policy1 and assigning to policy2 reflects correctly in getPolicyByContract.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "TestEnv",
+            "UserPool",
+            "TimeTrackingAPI",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/policy-contract-matrix.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "7431cb6ad2ed",
+          "title": "TC_TT_SESSION_001: Should return complete session details for active session @smoke @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/auto-tracker-sessions.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/auto-tracker-sessions.spec.ts",
+          "describe": "Time Tracking API - Session Details - Auto-Tracker Sessions @regression",
+          "tags": [
+            "@smoke",
+            "@critical",
+            "@regression"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Active auto-tracker session GET returns all required fields including state='active', subsessions, attachments, policy.",
+          "dependencies": [
+            "UserPool",
+            "session.helpers",
+            "policy.helpers"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "ensureNoActiveSession",
+            "resolveWorkerPaygContract",
+            "createTestPolicy"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.auto-tracker.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "e25fdf6171fb",
+          "title": "TC_TT_SESSION_002: Should return session details for paused session with correct pausedMinutes @smoke",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/auto-tracker-sessions.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/auto-tracker-sessions.spec.ts",
+          "describe": "Time Tracking API - Session Details - Auto-Tracker Sessions @regression",
+          "tags": [
+            "@smoke",
+            "@regression"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Paused auto-tracker session GET returns state='paused' and non-negative pausedMinutes.",
+          "dependencies": [
+            "UserPool",
+            "session.helpers"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "ensureNoActiveSession",
+            "resolveWorkerPaygContract",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.auto-tracker.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "251e2e49d557",
+          "title": "TC_TT_SESSION_003: Should return session details for completed session with endTime and totalMinutes @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/auto-tracker-sessions.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/auto-tracker-sessions.spec.ts",
+          "describe": "Time Tracking API - Session Details - Auto-Tracker Sessions @regression",
+          "tags": [
+            "@critical",
+            "@regression"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "xfail sandbox: completed auto-tracker sessions return endTime=null instead of the actual end time.",
+          "dependencies": [
+            "UserPool",
+            "session.helpers"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "ensureNoActiveSession",
+            "resolveWorkerPaygContract",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "blocked",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.auto-tracker.spec.ts",
+          "blockers": [
+            "xfail sandbox: completed auto-tracker sessions return endTime=null instead of the actual end time."
+          ],
+          "agent": null,
+          "status": "blocked",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "a14ac0d20ce7",
+          "title": "TC_TT_SESSION_004: Should return session with subsessions array populated after pause/resume @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/auto-tracker-sessions.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/auto-tracker-sessions.spec.ts",
+          "describe": "Time Tracking API - Session Details - Auto-Tracker Sessions @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "After two pause/resume cycles the session's subsessions array is non-empty with correct shape.",
+          "dependencies": [
+            "UserPool",
+            "session.helpers"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "ensureNoActiveSession",
+            "resolveWorkerPaygContract",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.auto-tracker.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "b9b6ab1041d2",
+          "title": "TC_TT_SESSION_005: Updating an active (ongoing) session is rejected @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/auto-tracker-sessions.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/auto-tracker-sessions.spec.ts",
+          "describe": "Time Tracking API - Session Details - Auto-Tracker Sessions @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "PATCH on an active auto-tracker session is rejected with a 4xx; session stays active and unchanged.",
+          "dependencies": [
+            "UserPool",
+            "session.helpers"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "ensureNoActiveSession",
+            "resolveWorkerPaygContract",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.auto-tracker.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "a7ca33b6ce2e",
+          "title": "TC_TT_SESSION_006: Should return 404 for non-existent session ID @smoke @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/error-handling.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/error-handling.spec.ts",
+          "describe": "Time Tracking API - Session Details - Error Handling @regression",
+          "tags": [
+            "@smoke",
+            "@critical",
+            "@regression"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "GET /time-sessions/999999999 returns 404 Not Found.",
+          "dependencies": [
+            "UserPool",
+            "session.helpers"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "resolveWorkerPaygContract",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.error-handling.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "17daae42fc26",
+          "title": "TC_TT_SESSION_007: Should return 400 or 404 for negative session ID @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/error-handling.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/error-handling.spec.ts",
+          "describe": "Time Tracking API - Session Details - Error Handling @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "GET with negative ID returns 400 or 404 (invalid format or not found).",
+          "dependencies": [
+            "UserPool",
+            "session.helpers"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "resolveWorkerPaygContract",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.error-handling.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "1905b9b4d21d",
+          "title": "TC_TT_SESSION_008: Should return 400, 403, or 404 for zero session ID @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/error-handling.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/error-handling.spec.ts",
+          "describe": "Time Tracking API - Session Details - Error Handling @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "GET with sessionId=0 returns one of 400/403/404.",
+          "dependencies": [
+            "UserPool",
+            "session.helpers"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "resolveWorkerPaygContract",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.error-handling.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "6f761400ca61",
+          "title": "TC_TT_SESSION_009: Should return 404 or 400 for very large session ID @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/error-handling.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/error-handling.spec.ts",
+          "describe": "Time Tracking API - Session Details - Error Handling @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P2",
+          "scenarioIntent": "GET with Number.MAX_SAFE_INTEGER returns 404 or 400 (overflow or not found).",
+          "dependencies": [
+            "UserPool",
+            "session.helpers"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "resolveWorkerPaygContract",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.error-handling.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "9d6e4c49c2be",
+          "title": "TC_TT_SESSION_010: Should return 404 for deleted session @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/error-handling.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/error-handling.spec.ts",
+          "describe": "Time Tracking API - Session Details - Error Handling @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Create, end, delete a session then verify GET returns 404 (conditionally skips if delete not supported).",
+          "dependencies": [
+            "UserPool",
+            "session.helpers"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "ensureNoActiveSession",
+            "resolveWorkerPaygContract",
+            "HTTP_STATUS"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.error-handling.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "d4c2735418e3",
+          "title": "TC_TT_SESSION_011: Manual entry returns complete session details @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "describe": "Time Tracking API - Manual Time Entries @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Manual entry GET returns all required fields including state='completed', reviewStatus='pending', contractId.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool",
+            "logVerbose"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TestEnv",
+            "HTTP_STATUS",
+            "logVerbose"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.manual.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "8b9792f56db4",
+          "title": "TC_TT_SESSION_012: Manual entry is immediately in completed state @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "describe": "Time Tracking API - Manual Time Entries @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Manual entry with startTime+endTime is immediately state='completed', never active or paused.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TestEnv",
+            "HTTP_STATUS",
+            "generateUniqueTitle"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.manual.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "2dfaa283c94a",
+          "title": "TC_TT_SESSION_013: Manual entry has exactly one subsession @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "describe": "Time Tracking API - Manual Time Entries @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Manual entry subsessions array contains exactly 1 item.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TestEnv",
+            "HTTP_STATUS",
+            "generateUniqueTitle"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.manual.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "0a516a1f716d",
+          "title": "TC_TT_SESSION_014: totalMinutes matches slot duration, pausedMinutes is 0 @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "describe": "Time Tracking API - Manual Time Entries @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Manual entry of 120 min has totalMinutes=120, workedMinutes=120, pausedMinutes=0.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TestEnv",
+            "HTTP_STATUS",
+            "generateUniqueTitle"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.manual.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "498f6cb30719",
+          "title": "TC_TT_ENTRY_001: Worker blocked when isManualEntryAllowed=false @regression @critical",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "describe": "Time Tracking API - Manual Time Entries @regression",
+          "tags": [
+            "@regression",
+            "@critical"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Policy with manualEntry=false blocks worker manual entry with 400/403/422.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TestEnv",
+            "HTTP_STATUS",
+            "generateUniqueTitle"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.manual.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "5852e8f1e7a6",
+          "title": "TC_TT_ENTRY_002: Missing startTime (endTime only) — API rejects @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "describe": "Time Tracking API - Manual Time Entries @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "POST manual entry with endTime but no startTime returns 400 or 422.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TestEnv",
+            "HTTP_STATUS",
+            "generateUniqueTitle"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.manual.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "af999d2720a7",
+          "title": "TC_TT_ENTRY_003: Missing contractId — API rejects @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "describe": "Time Tracking API - Manual Time Entries @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "POST manual entry with no contractId returns 400 or 422.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TestEnv",
+            "HTTP_STATUS",
+            "generateUniqueTitle"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.manual.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "2005b308d371",
+          "title": "TC_TT_ENTRY_004: Zero-duration entry (startTime === endTime) does not 500 @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "describe": "Time Tracking API - Manual Time Entries @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Zero-duration entry (start=end) does not return 500; product decision on accept/reject pending.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TestEnv",
+            "HTTP_STATUS",
+            "generateUniqueTitle"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.manual.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "74665c17625b",
+          "title": "TC_TT_ENTRY_005: Negative-duration entry (startTime > endTime) does not 500 @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "describe": "Time Tracking API - Manual Time Entries @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Inverted start/end entry does not return 500; product decision on accept/reject pending.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TestEnv",
+            "HTTP_STATUS",
+            "generateUniqueTitle"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.manual.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "d09e3b76a318",
+          "title": "TC_TT_ENTRY_006: Client creates manual entry on behalf of worker @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "describe": "Time Tracking API - Manual Time Entries @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Client-created manual entry is state='completed' and reviewStatus='pending' (not auto-approved).",
+          "dependencies": [
+            "TestEnv",
+            "UserPool"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TestEnv",
+            "HTTP_STATUS",
+            "generateUniqueTitle"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.manual.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "3aee9ef0d92a",
+          "title": "TC_TT_ENTRY_007: Worker edits title and note of manual entry @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "describe": "Time Tracking API - Manual Time Entries @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "PATCH with new title and note updates stored title and note while state stays 'completed'.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TestEnv",
+            "HTTP_STATUS",
+            "generateUniqueTitle"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.manual.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "cff2ef9a9099",
+          "title": "TC_TT_ENTRY_008: Delete pending manual entry @regression",
+          "legacyPath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "filePath": "tests/modules/time-tracking/api/verify/sessions-details/manual-time-entries.spec.ts",
+          "describe": "Time Tracking API - Manual Time Entries @regression",
+          "tags": [
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "DELETE pending manual entry returns 204 and subsequent GET returns 404.",
+          "dependencies": [
+            "TestEnv",
+            "UserPool"
+          ],
+          "helpersUsed": [
+            "UserPool",
+            "TestEnv",
+            "HTTP_STATUS",
+            "generateUniqueTitle"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/api/sessions.manual.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "migrated",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "92ad3f628912",
+          "title": "Should display the policies list page with default policy @smoke",
+          "legacyPath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "describe": "Time Tracking Policies - UI @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Client navigates to Time Tracking settings; policy list shows the resolved policy with Manage Workers button.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UIFixture",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/ui/frontoffice/policies.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "rewritten",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "b3b174625f01",
+          "title": "Should be able to click Manage Workers button for a policy @smoke",
+          "legacyPath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "describe": "Time Tracking Policies - UI @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Client clicks the Manage Workers button on a policy row without error.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UIFixture",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/ui/frontoffice/policies.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "rewritten",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "37edec83982d",
+          "title": "Should navigate to Time Tracking via Company Settings @smoke",
+          "legacyPath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "describe": "Time Tracking Policies - UI @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Client navigates Company Settings menu → Time Tracking and lands on the correct page with policies visible.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UIFixture",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/ui/frontoffice/policies.navigation.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "rewritten",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "6260bea6756e",
+          "title": "Should handle post-login dialogs and reach Time Tracking successfully",
+          "legacyPath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "describe": "Time Tracking Policies - UI @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression"
+          ],
+          "priority": "P1",
+          "scenarioIntent": "Post-login dialogs are auto-dismissed and Time Tracking settings page loads with policy visible.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UIFixture",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "migrationDecision": "merge",
+          "mergeCandidateWith": "Should display the policies list page with default policy @smoke",
+          "newPath": "features/time-tracking/tests/ui/frontoffice/policies.navigation.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "rewritten",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "75286df95733",
+          "title": "Should display all required policy information @smoke",
+          "legacyPath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "describe": "Time Tracking Policies - UI @ui @regression",
+          "tags": [
+            "@ui",
+            "@regression",
+            "@smoke"
+          ],
+          "priority": "P0",
+          "scenarioIntent": "Policy row in the list shows title, Manage Workers button is visible and enabled.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UIFixture",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "migrationDecision": "merge",
+          "mergeCandidateWith": "Should display the policies list page with default policy @smoke",
+          "newPath": "features/time-tracking/tests/ui/frontoffice/policies.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "rewritten",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "999106e42475",
+          "title": "Should complete full navigation flow: Login -> Settings -> Time Tracking -> Policies",
+          "legacyPath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "describe": "Time Tracking Policies - UI Deep Tests @ui @deep",
+          "tags": [
+            "@ui",
+            "@deep"
+          ],
+          "priority": "P2",
+          "scenarioIntent": "Full navigation path: login → Company Settings → Time Tracking → policy visible with Manage Workers button.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UIFixture",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/ui/frontoffice/policies.navigation.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "rewritten",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        },
+        {
+          "id": "e0c1b8b5369a",
+          "title": "Should maintain policy list after page reload",
+          "legacyPath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "filePath": "tests/modules/time-tracking/ui/verify/policies.spec.ts",
+          "describe": "Time Tracking Policies - UI Deep Tests @ui @deep",
+          "tags": [
+            "@ui",
+            "@deep"
+          ],
+          "priority": "P2",
+          "scenarioIntent": "After full page reload the policy list still shows the expected policy with Manage Workers button.",
+          "dependencies": [
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "helpersUsed": [
+            "UIFixture",
+            "UserPool",
+            "TimeTrackingAPI"
+          ],
+          "migrationDecision": "rewrite",
+          "mergeCandidateWith": "",
+          "newPath": "features/time-tracking/tests/ui/frontoffice/policies.spec.ts",
+          "blockers": [],
+          "agent": null,
+          "status": "rewritten",
+          "updatedAt": "2026-06-30T10:33:26.888292Z"
+        }
+      ]
+    }
+  ]
+}

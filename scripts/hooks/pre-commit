@@ -1,0 +1,32 @@
+#!/bin/sh
+# Feature-first e2e pre-commit gates.
+#
+# Canonical, version-controlled source for the pre-commit hook. Install it into
+# the repo's hooks dir with:  npm run hooks:install   (from the repo root)
+#
+# Runs only when staged changes touch tracked *.ts files outside archive/ (the
+# frozen legacy reference tree), so archive-only commits are unaffected.
+#
+#   G2  — tsc --noEmit            (block type errors)
+#   ARCH — npm run lint:arch      (boundaries + FS checks: the deterministic
+#                                  architecture gate; see eslint/architecture-rules.json)
+#
+# Bypass consciously with `git commit --no-verify` (a human decision, per GUARDRAILS).
+
+if git diff --cached --name-only | grep -vE '^archive/' | grep -q '\.ts$'; then
+  ROOT="$(git rev-parse --show-toplevel)"
+  cd "$ROOT" || exit 1
+
+  echo "[pre-commit] G2 compile-gate: tsc --noEmit"
+  npm run --silent typecheck || {
+    echo "[pre-commit] tsc failed — commit blocked (gate G2). Fix type errors or use --no-verify consciously."
+    exit 1
+  }
+
+  echo "[pre-commit] architecture gate: lint:arch (boundaries + FS checks)"
+  npm run --silent lint:arch || {
+    echo "[pre-commit] architecture gate failed — commit blocked. Fix violations (see eslint/architecture-rules.json) or use --no-verify consciously."
+    exit 1
+  }
+fi
+exit 0
